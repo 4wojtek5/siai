@@ -1,0 +1,5 @@
+1. pole "podaj 1 liczbe"
+2. pole "podaj 2 liczbe"
+3. lista rozwijalna "wybierz działanie" (+ - * / %)
+4. przycisk "wykonaj dzialanie"
+5. pod lub nad form wynik działania
