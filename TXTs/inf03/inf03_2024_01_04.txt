@@ -1,0 +1,117 @@
+styl6.css
+
+* {
+    font-family: Verdana;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+}
+
+#header1,
+#header2 {
+    background-color: #6F79A8;
+    color: white;
+    height: 140px;
+}
+
+#header1 {
+    width: 30%;
+}
+
+#header2 {
+    width: 70%;
+}
+
+.kalendarz {
+    background-color: #9FA8DA;
+    width: 160px;
+    height: 85px;
+    margin: 5px;
+    border: 1px solid #6F79A8;
+    overflow: hidden;
+    float: left;
+}
+
+.kalendarz:hover {
+    background-color: #6F79A8;
+    color: white;
+}
+
+footer {
+    background-color: #6F79A8;
+    color: white;
+    padding: 5px;
+    text-align: right;
+    clear: both;
+}
+
+h6 {
+    text-align: center;
+}
+
+============
+
+sierpien.html
+
+strona w trakcie budowy
+
+============
+
+index.php
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadania na lipiec</title>
+    <link rel="stylesheet" href="styl6.css">
+</head>
+
+<body>
+    <header>
+        <section id="header1">
+            <img src="logo1.png" alt="lipiec">
+        </section>
+        <section id="header2">
+            <h1>TERMINARZ</h1>
+            <p>najbliższe zadania:
+                <?php
+                $con = mysqli_connect('localhost', 'root', '', 'terminarz');
+                $q = "SELECT DISTINCT wpis FROM zadania WHERE dataZadania BETWEEN '2020-07-01' AND '2020-07-07' AND wpis != '';";
+                $res = mysqli_query($con, $q);
+                while ($row = mysqli_fetch_array($res)) {
+                    echo "$row[0]; ";
+                }
+                ?>
+            </p>
+        </section>
+    </header>
+    <main>
+        <?php
+        $q = "SELECT dataZadania, wpis FROM zadania WHERE MONTH(dataZadania) = 7;";
+        $res = mysqli_query($con, $q);
+        while ($row = mysqli_fetch_array($res)) {
+            echo "<section class='kalendarz'>
+                <h6>$row[0]</h6>
+                <p>$row[1]</p>
+                </section>";
+        }
+        mysqli_close($con);
+        ?>
+    </main>
+    <footer>
+        <a href="sierpien.html">Terminarz na sierpień</a>
+        <p>Stronę wykonał: Chriskyy</p>
+    </footer>
+</body>
+
+</html>
+
+============
+

@@ -1,0 +1,188 @@
+main.js
+
+function odkryj() {
+	let krotkie = document.getElementById("krotkie").checked;
+	let srednie = document.getElementById("srednie").checked;
+	let poldlugie = document.getElementById("poldlugie").checked;
+	let dlugie = document.getElementById("dlugie").checked;
+	let wynik = document.getElementById("wynik");
+	let cena = 0;
+	if(krotkie) cena = 25;
+	if(srednie) cena = 30;
+	if(poldlugie) cena = 40;
+	if(dlugie) cena = 50;
+	wynik.innerHTML = "Cena strzyżenia: " + cena;
+}
+
+============
+
+styl2.css
+
+body {
+	margin: 0;
+	font-family: Helvetica;
+}
+#lewy1 {
+	height: 400px;
+	width: 70%;
+	background: Snow;
+	text-align: center;
+	float: left;
+}
+#lewy2 {
+	height: 400px;
+	width: 70%;
+	background: Snow;
+	font-size: 150%;
+	float: left;
+}
+#prawy1 {
+	height: 150px;
+	width: 30%;
+	background: SteelBlue;
+	color: white;
+	text-align: center;
+	float: right;
+}
+#prawy2 {
+	height: 350px;
+	width: 30%;
+	background: SteelBlue;
+	color: white;
+	float: right;
+}
+#prawy3 {
+	height: 300px;
+	width: 30%;
+	background: Snow;
+	text-align: center;
+	float: right;
+}
+#stopka {
+	background: SteelBlue;
+	color: white;
+	clear: both;
+}
+h2 {
+	font-size: 250%;
+}
+img {
+	padding: 4px;
+}
+img:hover {
+	padding: 3px;
+	border: 1px solid SteelBlue;
+}
+
+============
+
+fryzura.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi fryzjerskie</title>
+	<link rel="stylesheet" href="styl2.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="lewy1">
+		<h2><a href="index.html">SALON FRYZJERSKI</a></h2>
+		<img src="obraz2.jpg" alt="Czesanie" />
+	</div>
+	<div id="prawy1">
+		<h2>MENU</h2>
+	</div>
+	<div id="prawy2">
+		<ol>
+			<li><a href="fryzura.html">Strzyżenie</a>
+				<ul>
+					<li>krótkie</li>
+					<li>średnie</li>
+					<li>półdługie</li>
+					<li>długie</li>
+				</ul>
+			</li>
+			<li>Czesanie</li>
+			<li>Koloryzacja</li>
+		</ol>
+	</div>
+	<div id="lewy2">
+		<h3>Dziś promocja na strzyżenie włosów</h3>
+		<label>
+			<input type="radio" name="typ" id="krotkie" />
+			Krótkie<br/>
+		</label>
+		<label>
+			<input type="radio" name="typ" id="srednie" />
+			Średnie<br/>
+		</label>
+		<label>
+			<input type="radio" name="typ" id="poldlugie" />
+			Półdługie<br/>
+		</label>
+		<label>
+			<input type="radio" name="typ" id="dlugie" />
+			Długie<br/>
+		</label>
+		<button type="button" onclick="odkryj()">Odkryj promocję</button>
+		<p id="wynik"></p>
+	</div>
+	<div id="prawy3">
+		<img src="obraz1.jpg" alt="Fryzjer" />
+	</div>
+	<div id="stopka">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi fryzjerskie</title>
+	<link rel="stylesheet" href="styl2.css" />
+</head>
+<body>
+	<div id="lewy1">
+		<h2><a href="index.html">SALON FRYZJERSKI</a></h2>
+		<img src="obraz2.jpg" alt="Czesanie" />
+	</div>
+	<div id="prawy1">
+		<h2>MENU</h2>
+	</div>
+	<div id="prawy2">
+		<ol>
+			<li><a href="fryzura.html">Strzyżenie</a>
+				<ul>
+					<li>krótkie</li>
+					<li>średnie</li>
+					<li>półdługie</li>
+					<li>długie</li>
+				</ul>
+			</li>
+			<li>Czesanie</li>
+			<li>Koloryzacja</li>
+		</ol>
+	</div>
+	<div id="lewy2">
+		<h5>Kontakt: 111 222 333</h5>
+		<p>Witaj! Miło nam, że odwiedziłeś nasz salon.<br/>Zapoznaj się z ofertą i sprawdź promocje!</p>
+	</div>
+	<div id="prawy3">
+		<img src="obraz1.jpg" alt="Fryzjer" />
+	</div>
+	<div id="stopka">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+

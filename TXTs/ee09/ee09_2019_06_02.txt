@@ -1,0 +1,151 @@
+obliczenia.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Stacja paliw</title>
+	<link rel="stylesheet" href="styl3.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="banerLewy">
+		<h1>Stacja Paliw</h1>
+	</div>
+	<div id="banerPrawy">
+		<a href="stacja.html"><img src="home.png" /></a>
+		<a href="obliczenia.html"><img src="znak.png" /></a>
+	</div>
+	<div id="glowny">
+		<h3>Oblicz koszt paliwa</h3>
+		<label>
+			Rodzaj paliwa (1-bezyna, 2-olej napędowy)<br/>
+			<input type="number" id="paliwo" /><br/>
+		</label>
+		<label>
+			Ile litrów<br/>
+			<input type="number" id="ilosc" /><br/>
+		</label>
+		<button type="button" onclick="oblicz();">OBLICZ</button>
+		<p id="wynik"></p>
+	</div>
+	<div id="lewy">
+		<a href="kwerendy.txt">Pobierz kwerendy</a>
+	</div>
+	<div id="prawy">
+		<img src="samochod.png" alt="samochod" />
+	</div>
+	<div id="stopka">
+		<p>Stronę opracował: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+
+styl3.css
+
+body {
+	margin: 0;
+	font-family: Helvetica;
+}
+#banerLewy,
+#lewy {
+	background: rgb(130, 69, 85);
+	color: white;
+	width: 30%;
+	height: 200px;
+	text-align: center;
+	float: left;
+}
+#banerPrawy,
+#prawy {
+	background: rgb(130, 69, 85);
+	color: white;
+	width: 70%;
+	height: 200px;
+	text-align: center;
+	float: left;
+}
+#glowny,
+#stopka {
+	background: rgb(240, 234, 226);
+	padding: 120px;
+}
+table,
+td {
+	border: 1px solid rgb(130, 69, 85);
+	color: rgb(130, 69, 85);
+	padding: 10px;
+}
+a {
+	color: rgb(240, 234, 226);
+}
+
+============
+
+stacja.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Stacja paliw</title>
+	<link rel="stylesheet" href="styl3.css" />
+</head>
+<body>
+	<div id="banerLewy">
+		<h1>Stacja Paliw</h1>
+	</div>
+	<div id="banerPrawy">
+		<a href="stacja.html"><img src="home.png" /></a>
+		<a href="obliczenia.html"><img src="znak.png" /></a>
+	</div>
+	<div id="glowny">
+		<h3>Godziny otwarcia stacji paliw</h3>
+		<table>
+			<tr>
+				<td>Dzień</td>
+				<td>Od</td>
+				<td>Do</td>
+			</tr>
+			<tr>
+				<td>Pn - Sb</td>
+				<td>6:00</td>
+				<td>24:00</td>
+			</tr>
+			<tr>
+				<td>Nd</td>
+				<td>7:00</td>
+				<td>24:00</td>
+			</tr>
+		</table>
+	</div>
+	<div id="lewy">
+		<a href="kwerendy.txt">Pobierz kwerendy</a>
+	</div>
+	<div id="prawy">
+		<img src="samochod.png" alt="samochod" />
+	</div>
+	<div id="stopka">
+		<p>Stronę opracował: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+
+main.js
+
+function oblicz() {
+	let paliwo = document.getElementById("paliwo").value;
+	let ilosc = document.getElementById("ilosc").value;
+	let wynik = document.getElementById("wynik");
+	let cena = 0;
+	if(paliwo == 1) cena = 4;
+	if(paliwo == 2) cena = 3.5;
+	wynik.innerHTML = "koszt paliwa: " + cena * ilosc + " zł";
+}
+
+============
+

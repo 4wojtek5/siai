@@ -1,0 +1,120 @@
+styl1.css
+
+body {
+	margin: 0;
+	font-family: Helvetica;
+}
+#lewy {
+	background: Navy;
+	color: white;
+	height: 700px;
+	width: 25%;
+	float: left;
+}
+#prawo1 {
+	background: RoyalBlue;
+	height: 100px;
+	width: 75%;
+	text-align: center;
+	float: left;
+}
+#prawo2 {
+	background: SteelBlue;
+	height: 300px;
+	width: 75%;
+	float: left;
+}
+#prawo3 {
+	background: RoyalBlue;
+	height: 300px;
+	width: 75%;
+	text-align: center;
+	float: left;
+}
+#stopka {
+	background: SteelBlue;
+	text-align: center;
+	padding: 20px;
+	clear: both;
+}
+h1 {
+	letter-spacing: 5px;
+}
+form {
+	margin: 30px;
+	line-height: 3;
+}
+form:hover {
+	background: DeepSkyBlue;
+}
+
+============
+
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Filmy</title>
+	<link rel="stylesheet" href="./styl1.css"/>
+</head>
+<body>
+	<div id="lewy">
+		<h3>Dostępne gatunki filmowe</h3>
+		<ol>
+			<li>Sci-Fi</li>
+			<li>animacja</li>
+			<li>dramat</li>
+			<li>horror</li>
+			<li>komedia</li>
+		</ol>
+		<p><a href="./kadr.jpg">Pobierz obraz</a></p>
+		<p><a href="http://repertuar-kin.pl" target="_blank">Sprawdź repertuar kin</a></p>
+	</div>
+	<div id="prawo1">
+		<h1>FILMOTEKA</h1>
+	</div>
+	<div id="prawo2">
+		<form action="dodaj.php" method="post">
+			<label for="tytul">Tytuł:</label>
+			<input type="text" name="tytul" id="tytul"/><br/>
+			<label for="gatunek">Gatunek filmu:</label>
+			<input type="number" name="gatunek" id="gatunek"/><br/>
+			<label for="rok">Rok produkcji:</label>
+			<input type="number" name="rok" id="rok"/><br/>
+			<label for="ocena">Ocena:</label>
+			<input type="number" name="ocena" id="ocena"/><br/>
+			<input type="reset" value="CZYŚĆ"/>
+			<input type="submit" value="DODAJ"/>
+		</form>
+	</div>
+	<div id="prawo3">
+		<img alt="zdjęcia filmowe" src="kadr.jpg"/>
+	</div>
+	<div id="stopka">
+		<p>Autor strony: 01234567890</p>
+	</div>
+</body>
+</html>
+
+============
+
+dodaj.php
+
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'dane');
+if(!empty($_POST['tytul']) && !empty($_POST['gatunek']) && !empty($_POST['rok']) && !empty($_POST['ocena'])) {
+	$tytul = $_POST['tytul'];
+	$gatunek = $_POST['gatunek'];
+	$rok = $_POST['rok'];
+	$ocena = $_POST['ocena'];
+	$sql = "INSERT INTO filmy(gatunki_id, tytul, rok, ocena) VALUES ($gatunek, '$tytul', $rok, $ocena);";
+	mysqli_query($con, $sql);
+	echo "Film $tytul został dodany do bazy";
+}
+mysqli_close($con);
+?>
+
+============
+

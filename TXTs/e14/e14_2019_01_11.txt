@@ -1,0 +1,197 @@
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Galeria zdjęć</title>
+	<link rel="stylesheet" href="styl5.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner">
+		<h1>Zdjęcia naszych pupilów</h1>
+	</div>
+	<div id="lewy">
+		<h2>Kategorie</h2>
+		<ul>
+			<li><a href="psy.html">Psy</a></li>
+			<li><a href="koty.html">Koty</a></li>
+			<li>Gryzonie</li>
+			<li>Jaszczurki</li>
+			<li>Inne zdjęcia</li>
+		</ul>
+		<h4>Powrót do strony głównej</h4>
+	</div>
+	<div id="prawy1">
+		<h1>Zdjęcie tygodnia</h1>
+		<p>Azor, 4 miesiące</p>
+	</div>
+	<div id="prawy2">
+		<p><img src="pies2.jpg" alt="pies Azor" /></p>
+	</div>
+	<div id="stopka">
+		Galerię zdjęć opracował: <i>PESEL</i>
+	</div>
+</body>
+</html>
+
+============
+
+main.js
+
+function over(id, img) {
+	document.getElementById(id).src = img;
+}
+function out(id, img) {
+	document.getElementById(id).src = img;
+}
+function clicked(id, img) {
+	over(id, img);
+	document.getElementById("zmiana").src = img;
+
+}
+
+============
+
+psy.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Galeria zdjęć</title>
+	<link rel="stylesheet" href="styl5.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner">
+		<h1>Zdjęcia psów</h1>
+	</div>
+	<div id="lewy">
+		<h2>Kategorie</h2>
+		<ul>
+			<li><a href="psy.html">Psy</a></li>
+			<li><a href="koty.html">Koty</a></li>
+			<li>Gryzonie</li>
+			<li>Jaszczurki</li>
+			<li>Inne zdjęcia</li>
+		</ul>
+		<h4><a href="index.html">Powrót do strony głównej</a></h4>
+	</div>
+	<div id="prawy1">
+		<h1>Wybierz zdjęcie</h1>
+		<img src="pies1.jpg" alt="pies1" id="pies1" onmouseover="over('pies1', 'pies1-szary.jpg')" onmouseout="out('pies1', 'pies1.jpg')" onclick="clicked('pies1', 'pies1.jpg')"/>
+		<img src="pies2.jpg" alt="pies2" id="pies2" onmouseover="over('pies2', 'pies2-szary.jpg')" onmouseout="out('pies2', 'pies2.jpg')" onclick="clicked('pies2', 'pies2.jpg')"/>
+		<img src="pies3.jpg" alt="pies3" id="pies3" onmouseover="over('pies3', 'pies3-szary.jpg')" onmouseout="out('pies3', 'pies3.jpg')" onclick="clicked('pies3', 'pies3.jpg')"/>
+	</div>
+	<div id="prawy2">
+		<p><img id="zmiana" src="pies1.jpg" alt="pies-duży" /></p>
+	</div>
+	<div id="stopka">
+		Galerię zdjęć opracował: <i>PESEL</i>
+	</div>
+</body>
+</html>
+
+============
+
+koty.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Galeria zdjęć</title>
+	<link rel="stylesheet" href="styl5.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner">
+		<h1>Zdjęcia kotów</h1>
+	</div>
+	<div id="lewy">
+		<h2>Kategorie</h2>
+		<ul>
+			<li><a href="psy.html">Psy</a></li>
+			<li><a href="koty.html">Koty</a></li>
+			<li>Gryzonie</li>
+			<li>Jaszczurki</li>
+			<li>Inne zdjęcia</li>
+		</ul>
+		<h4><a href="index.html">Powrót do strony głównej</a></h4>
+	</div>
+	<div id="prawy1">
+		<h1>Wybierz zdjęcie</h1>
+		<img src="kot1.jpg" alt="kot1" id="kot1" onmouseover="over('kot1', 'kot1-szary.jpg')" onmouseout="out('kot1', 'kot1.jpg')" onclick="clicked('kot1', 'kot1.jpg')"/>
+	</div>
+	<div id="prawy2">
+		<p><img id="zmiana" src="kot1.jpg" alt="kot-duży" /></p>
+	</div>
+	<div id="stopka">
+		Galerię zdjęć opracował: <i>PESEL</i>
+	</div>
+</body>
+</html>
+
+============
+
+styl5.css
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Verdana;
+}
+#baner {
+	background: #9692B1;
+	color: white;
+	text-align: center;
+	height: 80px;
+}
+#lewy {
+	background: #9692B1;
+	color: white;
+	width: 20%;
+	height: 750px;
+	float: left;
+}
+#prawy1 {
+	background: #FFF4CC;
+	width: 80%;
+	height: 300px;
+	text-align: center;
+	float: left;
+}
+#prawy2 {
+	background: #DBCC93;
+	width: 80%;
+	height: 450px;
+	text-align: center;
+	float: left;
+}
+#stopka {
+	background: #9692B1;
+	color: white;
+	text-align: right;
+	clear: both;
+}
+a {
+	color: white;
+}
+#prawy1 img {
+	width: 15%;
+	margin: 20px;
+}
+#prawy2 img {
+	border: 4px solid #9692B1;
+}
+#prawy2 img:hover {
+	border-color: gray;
+}
+h1 {
+	margin: 0;
+}
+
+============
+

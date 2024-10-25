@@ -1,0 +1,176 @@
+index.html
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Hurtownia</title>
+  <link rel="stylesheet" href="styl4.css" />
+</head>
+<body>
+  <div id="logo">
+    <img src="logo.png" alt="hurtownia" />
+  </div>
+  <div id="menu">
+    <a href="index.html">Strona główna</a>
+    <a href="zamowienia.html">Zamówienia</a>
+    <a href="blog.html">Blog o kawie</a>
+    <a href="http://gatunki-kawy.pl/" target="_blank">Odwiedź także</a>
+  </div>
+  <div id="baner">
+    <h1>Hurtownia kawy</h1>
+  </div>
+  <div id="lewy">
+    <h2>Oferta</h2>
+    <ol>
+      <li>Kawa palona Arabica</li>
+      <li>Kawa palona Robusta</li>
+      <li>Kawa bezkofeinowa</li>
+      <li>Kawa zielona</li>
+    </ol>
+  </div>
+  <div id="prawy">
+    <img src="kawa.png" alt="Poczęstuj się" />
+  </div>
+  <div id="stopka">
+    Stronę przygotował: <b>PESEL</b>
+  </div>
+</body>
+</html>
+
+============
+
+zamowienia.html
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Hurtownia</title>
+  <link rel="stylesheet" href="styl4.css" />
+  <script src="main.js"></script>
+</head>
+<body>
+  <div id="logo">
+    <img src="logo.png" alt="hurtownia" />
+  </div>
+  <div id="menu">
+    <a href="index.html">Strona główna</a>
+    <a href="zamowienia.html">Zamówienia</a>
+    <a href="blog.html">Blog o kawie</a>
+    <a href="http://gatunki-kawy.pl/">Odwiedź także</a>
+  </div>
+  <div id="baner">
+    <h1>Hurtownia kawy</h1>
+  </div>
+  <div id="lewy">
+    <h2>Oferta</h2>
+    <ol>
+      <li>Kawa palona Arabica</li>
+      <li>Kawa palona Robusta</li>
+      <li>Kawa bezkofeinowa</li>
+      <li>Kawa zielona</li>
+    </ol>
+  </div>
+  <div id="prawy">
+    Podaj numer kawy:<br />
+    <input type="number" id="numer" /><br />
+    Podaj wagę w dekagramach:<br />
+    <input type="number" id="waga" /><br />
+    <button type="button" onclick="f();">Zamów</button>
+    <p id="wynik"></p>
+  </div>
+  <div id="stopka">
+    Stronę przygotował: <b>PESEL</b>
+  </div>
+</body>
+</html>
+
+============
+
+blog.html
+
+Strona w trakcie budowy
+
+============
+
+main.js
+
+function f() {
+  let wynik = document.getElementById("wynik");
+  let numer = parseInt(document.getElementById("numer").value);
+  let waga = parseInt(document.getElementById("waga").value);
+  let koszt = 0;
+  switch (numer) {
+    case (1):
+      koszt = waga * 5;
+      wynik.innerHTML = "Koszt zamówienia wynosi " + koszt + " złotych";
+      break;
+    case (2):
+      koszt = waga * 6;
+      wynik.innerHTML = "Koszt zamówienia wynosi " + koszt + " złotych";
+      break;
+    case (3):
+      koszt = waga * 7;
+      wynik.innerHTML = "Koszt zamówienia wynosi " + koszt + " złotych";
+      break;
+    default:
+      wynik.innerHTML = "Koszt zamówienia wynosi " + koszt + " złotych";
+  }
+}
+
+============
+
+styl4.css
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+#logo {
+  background: rgb(162, 117, 87);
+  width: 20%;
+  height: 100px;
+  float: left;
+}
+#menu {
+  background: rgb(162, 117, 87);
+  width: 80%;
+  height: 100px;
+  text-align: right;
+  float: left;
+}
+#baner, #stopka {
+  background: rgb(74, 45, 32);
+  color: white;
+  text-align: center;
+  padding: 30px;
+  clear: both;
+}
+#lewy, #prawy {
+  background: rgb(162, 117, 87);
+  color: white;
+  width: 50%;
+  height: 500px;
+  float: left;
+}
+h1 {
+  letter-spacing: 10px;
+}
+a {
+  color: rgb(65, 98, 85);
+  padding: 20px;
+  margin: 10px;
+  font-size: 150%;
+  line-height: 100px;
+  border: 1px solid rgb(65, 98, 85);
+}
+li:nth-child(4) {
+  text-decoration: line-through;
+}
+img {
+	margin: 0;
+}
+
+============
+

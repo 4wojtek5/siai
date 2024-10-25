@@ -1,0 +1,165 @@
+fib.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Ciągi liczbowe</title>
+	<link rel="stylesheet" href="styl2.css" />
+</head>
+<body>
+	<div id="baner1">
+		<h2>Poznaj Ciągi Liczbowe</h2>
+	</div>
+	<div id="baner2">
+		<a href="liczby.html"><h5>Ciągi arytmetyczne</h5></a>
+	</div>
+	<div id="baner3">
+		<a href="fib.html"><h5>Ciąg Fibonacciego</h5></a>
+	</div>
+	<div id="baner4">
+		<img src="obraz1.png" alt="Fibonacci" />
+	</div>
+	<div id="lewy">
+		<ol>
+			<li>ciągi arytmetyczne</li>
+			<li>ciągi geometryczne</li>
+			<li>ciąg Fibonacciego</li>
+		</ol>
+	</div>
+	<div id="prawy">
+		<img src="obraz2.jpg" alt="Fibonacci" />
+	</div>
+	<div id="stopka">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+
+styl2.css
+
+body {
+	margin: 0;
+	font-family: Verdana;
+	color: #2F2F2F;
+}
+#baner1 {
+	background: #DCDCDC;
+	width: 55%;
+	height: 80px;
+	text-align: center;
+	float: left;
+}
+#baner2,
+#baner3,
+#baner4 {
+	background: #DCDCDC;
+	width: 15%;
+	height: 80px;
+	float: left;
+}
+#lewy {
+	background: #808080;
+	width: 30%;
+	height: 450px;
+	float: left;
+}
+#prawy {
+	background: #808080;
+	width: 70%;
+	height: 450px;
+	float: left;
+}
+#stopka {
+	background: #DCDCDC;
+	text-align: center;
+	clear: both;
+}
+h5 {
+	color: #808080;
+	border: 1px solid #808080;
+	margin: 7px;
+	padding: 10px;
+	font-size: 80%;
+}
+input {
+	color: gray
+}
+
+============
+
+main.js
+
+function generuj() {
+	let a = parseInt(document.getElementById("a").value);
+	let r = parseInt(document.getElementById("r").value);
+	let n = parseInt(document.getElementById("n").value);
+	let wynik = document.getElementById("wynik");
+	res = "Ciąg arytmetyczny zawiera wyrazy: ";
+	while(n) {
+		res += a + ", ";
+		a = a + r;
+		n--;
+	}
+	wynik.innerHTML = res;
+}
+
+============
+
+liczby.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Ciągi liczbowe</title>
+	<link rel="stylesheet" href="styl2.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner1">
+		<h2>Poznaj Ciągi Liczbowe</h2>
+	</div>
+	<div id="baner2">
+		<a href="liczby.html"><h5>Ciągi arytmetyczne</h5></a>
+	</div>
+	<div id="baner3">
+		<a href="fib.html"><h5>Ciąg Fibonacciego</h5></a>
+	</div>
+	<div id="baner4">
+		<img src="obraz1.png" alt="Fibonacci" />
+	</div>
+	<div id="lewy">
+		<ol>
+			<li>ciągi arytmetyczne</li>
+			<li>ciągi geometryczne</li>
+			<li>ciąg Fibonacciego</li>
+		</ol>
+	</div>
+	<div id="prawy">
+		<h2>Generowanie ciągu arytmetycznego</h2>
+		<label>
+			Pierwszy wyraz A1:
+			<input type="number" id="a" /><br/>
+		</label>
+		<label>
+			Różnica ciągu R:
+			<input type="number" id="r" /><br/>
+		</label>
+		<label>
+			Liczba wyrazów w ciągu N:
+			<input type="number" id="n" /><br/>
+		</label>
+		<button type="button" onclick="generuj()">Generuj Ciąg</button>
+		<p id="wynik"></p>
+	</div>
+	<div id="stopka">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+

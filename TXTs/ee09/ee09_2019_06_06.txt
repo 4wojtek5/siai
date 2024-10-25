@@ -1,0 +1,123 @@
+zgloszenie.php
+
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'ratownictwo');
+if(!empty($_POST['zespol']) && !empty($_POST['dyspozytor']) && !empty($_POST['adres'])) {
+	$zespol = $_POST['zespol'];
+	$dyspozytor = $_POST['dyspozytor'];
+	$adres = $_POST['adres'];
+	$kw = "INSERT INTO zgloszenia VALUES (NULL, $zespol, $dyspozytor, '$adres', 0, NOW());";
+	mysqli_query($con, $kw);
+}
+mysqli_close($con)
+?>
+
+============
+
+pogotowie.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Pogotowie Ratunkowe</title>
+	<link rel="stylesheet" href="styl5.css" />
+</head>
+<body>
+	<div id="baner1">
+		<img src="obraz.jpg" alt="pogotowie" />
+	</div>
+	<div id="baner2">
+		<h1>Pogotowie Ratunkowe</h1>
+	</div>
+	<div id="baner3">
+		<p>Kontakt:<br/>022 222 11 333</p>
+	</div>
+	<div id="glowny">
+		<h2>Dodaj nowe zgłoszenie</h2>
+		<form action="zgloszenie.php" method="post">
+			<label>
+				Numer zespołu ratowniczego:<br/>
+				<input type="number" name="zespol" /><br/>
+			</label>
+			<label>
+				Numer dyspozytora:<br/>
+				<input type="number" name="dyspozytor" /><br/>
+			</label>
+			<label>
+				Adres:<br/>
+				<textarea cols="100" name="adres"></textarea><br/>
+			</label>
+			<button type="reset">WYCZYŚĆ</button>
+			<button type="submit">ZGŁOŚ</button>
+		</form>
+	</div>
+	<div id="stopka1">
+		<h4>Numery alarmowe</h4>
+		<ul>
+			<li>999</li>
+			<li>112</li>
+		</ul>
+	</div>
+	<div id="stopka2">
+		<a href="kwerendy.txt">Pobierz kwerendy</a>
+	</div>
+	<div id="stopka3">
+		<p>Autor<br/>Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+
+styl5.css
+
+body {
+	margin: 0;
+	font-family: Georgia;
+}
+#baner1,
+#baner2,
+#baner3,
+#stopka1,
+#stopka2,
+#stopka3 {
+	background: Sienna;
+	color: white;
+	height: 150px;
+}
+#baner1,
+#stopka1 {
+	width: 40%;
+	float: left;
+}
+#baner2,
+#stopka2 {
+	width: 50%;
+	font-size: 150%;
+	float: left;
+}
+#baner3,
+#stopka3 {
+	width: 10%;
+	text-align: center;
+	float: left;
+}
+#glowny {
+	background: Tan;
+	padding: 100px;
+	clear: both;
+}
+a {
+	border: 1px dashed Sienna;
+	background: Tan;
+	color: Sienna;
+	padding: 40px;
+	line-height: 150px;
+}
+li {
+	list-style-type: circle;
+}
+
+============
+

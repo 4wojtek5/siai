@@ -1,0 +1,184 @@
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Fabryka cukierków</title>
+	<link rel="stylesheet" href="styl10.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="gorny1">
+		<a href="zamowienie.html">Zamów cukierki</a>
+	</div>
+	<div id="gorny2">
+		<a href="index.html"><img src="logotyp.png" alt="Nasze logo" /></a>
+	</div>
+	<div id="baner">
+		<h1>Słodka kraina</h1>
+	</div>
+	<div id="lewy">
+		<img src="cukierki3.jpg" alt="Nasze cukierki" />
+	</div>
+	<div id="prawy">
+		<h2>Nasza oferta</h2>
+		<table>
+			<tr>
+				<td>Kształty</td>
+				<td rowspan="2">Możesz zamówić<br/>dowolny kolor cukierka</td>
+			</tr>
+			<tr>
+				<td>
+					<ol>
+						<li>cytryna</li>
+						<li>liść</li>
+						<li>banan</li>
+					</ol>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="stopka">
+		Autor strony: <b>PESEL</b>
+	</div>
+</body>
+</html>
+
+============
+
+styl10.css
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Helvetica;
+}
+#gorny1,
+#gorny2 {
+	background: rgb(146, 184, 112);
+	text-align: center;
+	width: 50%;
+	height: 170px;
+	float: left;
+}
+#baner,
+#stopka {
+	background: rgb(100, 61, 49);
+	color: white;
+	text-align: center;
+	height: 80px;
+	padding: 5px;
+	clear: both;
+}
+#lewy,
+#prawy {
+	background: rgb(146, 184, 112);
+	width: 50%;
+	height: 450px;
+	float: left;
+}
+#gorny1 a {
+	background: url("cukierki1.jpg");
+	padding-right: 30px;
+	padding-bottom: 120px;
+	font-size: 150%;
+	text-decoration: none;
+}
+table, td {
+	border: 2px dashed green;
+	margin: 30px;
+	padding: 20px;
+}
+h1 {
+	letter-spacing: 20px;
+	font-size: 250%;
+}
+
+============
+
+main.js
+
+function zamowienie() {
+	let ksztalt = document.getElementById("ksztalt").value;
+	let r = document.getElementById("r").value;
+	let g = document.getElementById("g").value;
+	let b = document.getElementById("b").value;
+	let wynik = document.getElementById("wynik");
+	let kolor = document.getElementById("kolor");
+	if(ksztalt == 1) wynik.innerHTML = "Twoje zamówienie to cukierek cytryna";
+	if(ksztalt == 2) wynik.innerHTML = "Twoje zamówienie to cukierek liść";
+	if(ksztalt == 3) wynik.innerHTML = "Twoje zamówienie to cukierek banan";
+	kolor.style = "background: rgb(" + r + ", " + g + ", " + b + ");";
+}
+
+============
+
+zamowienie.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Fabryka cukierków</title>
+	<link rel="stylesheet" href="styl10.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="gorny1">
+		<a href="zamowienie.html">Zamów cukierki</a>
+	</div>
+	<div id="gorny2">
+		<a href="index.html"><img src="logotyp.png" alt="Nasze logo" /></a>
+	</div>
+	<div id="baner">
+		<h1>Strefa zamówień</h1>
+	</div>
+	<div id="lewy">
+		<label>
+			Numer kształtu:<br/>
+			<input type="number" id="ksztalt" /><br/>
+		</label>
+		skomponuj swój kolor, podaj RGB:<br/>
+		<label>
+			R:
+			<input type="number" id="r" />
+		</label>
+		<label>
+			G:
+			<input type="number" id="g" />
+		</label>
+		<label>
+			B:
+			<input type="number" id="b" /><br/>
+		</label>
+		<button type="button" onclick="zamowienie();">Zamówienie</button>
+		<p id="wynik">Twoje zamówienie</p>
+		<button type="button" id="kolor">Kolor</button>
+	</div>
+	<div id="prawy">
+		<h2>Nasza oferta</h2>
+		<table>
+			<tr>
+				<td>Kształty</td>
+				<td rowspan="2">Możesz zamówić<br/>dowolny kolor cukierka</td>
+			</tr>
+			<tr>
+				<td>
+					<ol>
+						<li>cytryna</li>
+						<li>liść</li>
+						<li>banan</li>
+					</ol>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="stopka">
+		Autor strony: <b>PESEL</b>
+	</div>
+</body>
+</html>
+
+============
+

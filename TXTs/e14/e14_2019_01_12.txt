@@ -1,0 +1,195 @@
+main.js
+
+function over(id, img) {
+	document.getElementById(id).src = img;
+}
+function out(id, img) {
+	document.getElementById(id).src = img;
+}
+function clicked(id, img) {
+	document.getElementById("zmiana").src = img;
+}
+
+============
+
+styl6.css
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Garamond;
+	font-size: 110%;
+}
+#baner {
+	background: #965873;
+	color: white;
+	text-align: center;
+	height: 100px;
+}
+#lewy {
+	background: #965873;
+	color: white;
+	width: 30%;
+	height: 750px;
+	float: left;
+}
+#prawy1 {
+	background: #AAC28A;
+	width: 70%;
+	height: 250px;
+	text-align: right;
+	float: left;
+}
+#prawy2 {
+	background: #86A25F;
+	width: 70%;
+	height: 500px;
+	text-align: center;
+	float: left;
+}
+#stopka {
+	background: #965873;
+	color: white;
+	clear: both;
+}
+a {
+	color: white;
+}
+#prawy1 img {
+	width: 18%;
+	margin: 10px;
+}
+#prawy2 img {
+	border: 6px dotted #965873;
+}
+#prawy2 img:hover {
+	border-color: green;
+}
+h2 {
+	margin: 0;
+}
+
+============
+
+koty.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Nasze zdjęcia</title>
+	<link rel="stylesheet" href="styl6.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner">
+		<h2>Nasze koty</h2>
+	</div>
+	<div id="lewy">
+		<h1>Wybierz</h1>
+		<ul>
+			<li><a href="psy.html">Psy</a></li>
+			<li><a href="koty.html">Koty</a></li>
+			<li>Konie</li>
+			<li>Rybki</li>
+			<li>Inne zdjęcia</li>
+		</ul>
+		<h5><a href="index.html">Do strony głównej</a></h5>
+	</div>
+	<div id="prawy1">
+		<h2>Kliknij na zdjęcie</h2>
+		<img src="kot1.jpg" alt="koty" id="kot1" onclick="clicked('kot1', 'kot1.jpg')" onmouseover="over('kot1', 'kot1-odbicie.jpg')" onmouseout="out('kot1', 'kot1.jpg')" />
+	</div>
+	<div id="prawy2">
+		<p><img src="kot1.jpg" alt="Wybrany kot" id="zmiana"/></p>
+	</div>
+	<div id="stopka">
+		Galerię zdjęć opracował: <b>PESEL</b>
+	</div>
+</body>
+</html>
+
+============
+
+psy.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Nasze zdjęcia</title>
+	<link rel="stylesheet" href="styl6.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner">
+		<h2>Nasze psy</h2>
+	</div>
+	<div id="lewy">
+		<h1>Wybierz</h1>
+		<ul>
+			<li><a href="psy.html">Psy</a></li>
+			<li><a href="koty.html">Koty</a></li>
+			<li>Konie</li>
+			<li>Rybki</li>
+			<li>Inne zdjęcia</li>
+		</ul>
+		<h5><a href="index.html">Do strony głównej</a></h5>
+	</div>
+	<div id="prawy1">
+		<h2>Kliknij na zdjęcie</h2>
+		<img src="pies1.jpg" alt="psy" id="pies1" onclick="clicked('pies1', 'pies1.jpg')" onmouseover="over('pies1', 'pies1-odbicie.jpg')" onmouseout="out('pies1', 'pies1.jpg')" />
+		<img src="pies2.jpg" alt="psy" id="pies2" onclick="clicked('pies2', 'pies2.jpg')" onmouseover="over('pies2', 'pies2-odbicie.jpg')" onmouseout="out('pies2', 'pies2.jpg')" />
+		<img src="pies3.jpg" alt="psy" id="pies3" onclick="clicked('pies3', 'pies3.jpg')" onmouseover="over('pies3', 'pies3-odbicie.jpg')" onmouseout="out('pies3', 'pies3.jpg')" />
+	</div>
+	<div id="prawy2">
+		<p><img src="pies2.jpg" alt="Wybrany pies" id="zmiana"/></p>
+	</div>
+	<div id="stopka">
+		Galerię zdjęć opracował: <b>PESEL</b>
+	</div>
+</body>
+</html>
+
+============
+
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Nasze zdjęcia</title>
+	<link rel="stylesheet" href="styl6.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner">
+		<h2>Fotografie zwierząt</h2>
+	</div>
+	<div id="lewy">
+		<h1>Wybierz</h1>
+		<ul>
+			<li><a href="psy.html">Psy</a></li>
+			<li><a href="koty.html">Koty</a></li>
+			<li>Konie</li>
+			<li>Rybki</li>
+			<li>Inne zdjęcia</li>
+		</ul>
+		<h5><a href="index.html">Do strony głównej</a></h5>
+	</div>
+	<div id="prawy1">
+		<h2>Zdjęcie miesiąca</h2>
+		<p>Fafik, 1 rok</p>
+	</div>
+	<div id="prawy2">
+		<p><img src="pies3.jpg" alt="Fafik" /></p>
+	</div>
+	<div id="stopka">
+		Galerię zdjęć opracował: <b>PESEL</b>
+	</div>
+</body>
+</html>
+
+============
+

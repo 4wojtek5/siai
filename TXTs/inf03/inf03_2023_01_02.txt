@@ -1,0 +1,151 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wynajem pokoi</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+
+<body>
+    <header>
+        <h1>Pensjonat pod dobrym humorem</h1>
+    </header>
+    <main>
+        <section id="panelLewy">
+            <a href="index.html">GŁÓWNA</a>
+            <img src="1.jpg" alt="pokoje" />
+        </section>
+        <section id="panelSrodkowy">
+            <a href="cennik.php">CENNIK</a>
+            <img src="2.jpg" alt="pokoje" /></section>
+        </section>
+        <section id="panelPrawy">
+            <a href="kalkulator.html">KALKULATOR</a>
+            <img src="3.jpg" alt="pokoje" /></section>
+    </main>
+    <footer>
+        <p>Stronę opracował: Chriskyy#0181</p>
+    </footer>
+</body>
+
+</html>
+
+============
+
+styl2.css
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: Garamond;
+    text-align: center;
+}
+
+body {
+    background-color: Lavender;
+}
+
+header,
+footer {
+    background-color: #AF8EB5;
+    color: white;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+}
+
+#panelLewy,
+#panelSrodkowy,
+#panelPrawy {
+    background-color: #E1BEE7;
+    width: 30%;
+    height: 500px;
+    padding-top: 40px;
+    margin: 15px;
+    box-shadow: 10px 10px 10px DimGray;
+}
+
+a {
+    color: Indigo;
+    font-size: 150%;
+    padding: 10px;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: Indigo;
+    color: white;
+}
+img,
+table {
+    border: 1px solid;
+    width: 80%;
+    margin: 40px auto;
+}
+
+============
+
+kalkulator.html
+
+strona w trakcie budowy
+
+============
+
+cennik.php
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wynajem pokoi</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+
+<body>
+    <header>
+        <h1>Pensjonat pod dobrym humorem</h1>
+    </header>
+    <main>
+        <section id="panelLewy">
+            <a href="index.html">GŁÓWNA</a>
+            <img src="1.jpg" alt="pokoje" />
+        </section>
+        <section id="panelSrodkowy">
+            <a href="cennik.php">CENNIK</a>
+            <table>
+                <?php
+                $con = mysqli_connect('localhost', 'root', '', 'wynajem');
+                $q = "SELECT * FROM pokoje;";
+                $res = mysqli_query($con, $q);
+                while ($row = mysqli_fetch_array($res)) {
+                    echo "<tr>
+                            <td>$row[0]</td>
+                            <td>$row[1]</td>
+                            <td>$row[2]</td>
+                        </tr>";
+                }
+                mysqli_close($con);
+                ?>
+            </table>
+        </section>
+        <section id="panelPrawy">
+            <a href="kalkulator.html">KALKULATOR</a>
+            <img src="3.jpg" alt="pokoje" /></section>
+    </main>
+    <footer>
+        <p>Stronę opracował: Chriskyy#0181</p>
+    </footer>
+</body>
+
+</html>
+
+============
+

@@ -1,0 +1,110 @@
+karta.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Karty wędkarskie</title>
+	<link rel="stylesheet" href="styl_1.css" />
+</head>
+<body>
+	<div id="baner">
+		<h2>Zgłoszenie na kartę wędkarską</h2>
+	</div>
+	<div id="glowny">
+		<h4>Formularz - karta wędkarska</h4>
+		<form action="zapisz.php" method="post">
+			<label>
+				imie:<br/>
+				<input type="text" name="imie" /><br/>
+			</label>
+			<label>
+				nazwisko:<br/>
+				<input type="text" name="nazwisko" /><br/>
+			</label>
+			<label>
+				adres:<br/>
+				<textarea rows="1" cols="30" name="adres"></textarea><br/>
+			</label>
+			<button type="reset">CZYŚĆ</button>
+			<button>ZAPISZ</button>
+		</form>
+	</div>
+	<div id="lewy">
+		<h4>Typy łowisk</h4>
+		<ul>
+			<li>Zalewy</li>
+			<li>Stawy</li>
+			<li>Jeziora</li>
+			<li>Rzeki</li>
+		</ul>
+	</div>
+	<div id="srodkowy">
+		<img src="wedka.jpg" alt="karta wędkarska" />
+	</div>
+	<div id="prawy">
+		<p>Stronę przygotował: Chriskyy#0181</p>
+		<a href="http://www.kartawedkarska.pl/">Karta wędkarska</a>
+	</div>
+</body>
+</html>
+
+============
+
+zapisz.php
+
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'wedkowanie');
+if(!empty($_POST['imie']) && !empty($_POST['nazwisko']) && !empty($_POST['adres'])) {
+	$imie = $_POST['imie'];
+	$nazwisko = $_POST['nazwisko'];
+	$adres = $_POST['adres'];
+	$kw = "INSERT INTO karty_wedkarskie VALUES (NULL, '$imie', '$nazwisko', '$adres', 'NULL', NULL);";
+	mysqli_query($con, $kw);
+}
+mysqli_close($con);
+?>
+
+============
+
+styl_1.css
+
+body {
+	margin: 0;
+	font-family: Georgia;
+}
+#baner {
+	background: DodgerBlue;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+#glowny {
+	background: LightBlue;
+	padding: 100px;
+}
+#lewy {
+	background: DodgerBlue;
+	color: white;
+	width: 20%;
+	height: 220px;
+	float: left;
+}
+#srodkowy,
+#prawy {
+	background: DodgerBlue;
+	color: white;
+	width: 40%;
+	height: 220px;
+	text-align: center;
+	float: left;
+}
+a {
+	border: 1px dashed DimGray;
+	background: Gold;
+	color: DarkRed;
+	padding: 10px;
+}
+
+============
+

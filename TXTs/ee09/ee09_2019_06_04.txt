@@ -1,0 +1,193 @@
+dzialania.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Działania matematyczne</title>
+	<link rel="stylesheet" href="styl.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner1">
+		<img src="logo.jpg" alt="matematyka" />
+	</div>
+	<div id="baner2">
+		<h1>Pomocnik Matematyczny</h1>
+	</div>
+	<div id="baner3">
+		<a href="dzialania.html"><h4>Działania</h4></a>
+	</div>
+	<div id="baner4">
+		<a href="mnozenie.html"><h4>Tabliczka mnożenia</h4></a>
+	</div>
+	<div id="lewy">
+		<h3>Proste działania</h3>
+		<label>
+			liczba A:
+			<input type="number" id="a" /><br/>
+		</label>
+		<label>
+			liczba B:
+			<input type="number" id="b" /><br/>
+		</label>
+		<button type="button" onclick="dodawanie();">+</button>
+		<button type="button" onclick="odejmowanie();">-</button>
+		<button type="button" onclick="mnozenie();">*</button>
+		<button type="button" onclick="dzielenie();">/</button>
+		<button type="button" onclick="potegowanie();">A^B</button>
+		<p id="wynik"></p>
+	</div>
+	<div id="prawy">
+		<ul>
+			<li>dodawanie</li>
+			<li>odejmowanie</li>
+			<li>mnożenie</li>
+			<li>dzielenie</li>
+			<li>potęgowanie</li>
+		</ul>
+	</div>
+	<div id="stopka">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+
+styl.css
+
+body {
+	margin: 0;
+	font-family: Tahoma;
+	color: white;
+}
+#baner1,
+#baner3,
+#baner4 {
+	background: #983713;
+	width: 17%;
+	height: 100px;
+	float: left;
+}
+#baner2 {
+	background: #983713;
+	width: 49%;
+	height: 100px;
+	text-align: center;
+	float: left;
+}
+#lewy {
+	background: #FF7F50;
+	width: 80%;
+	height: 500px;
+	float: left;
+}
+#prawy {
+	background: #FF7F50;
+	width: 20%;
+	height: 500px;
+	float: left;
+}
+#stopka {
+	background: #983713;
+	text-align: right;
+	clear: both;
+}
+button {
+	background: #D3D3D3;
+	color: #2F2F2F;
+	border: 2px solid #2F2F2F;
+	margin: 5px;
+	padding: 10px 30px;
+}
+input {
+	color: orange;
+}
+a {
+	color: white;
+}
+
+============
+
+main.js
+
+function dodawanie() {
+	let a = parseInt(document.getElementById("a").value);
+	let b = parseInt(document.getElementById("b").value);
+	let wynik = document.getElementById("wynik");
+	wynik.innerHTML = "Wynik: " + (a + b);
+}
+
+function odejmowanie() {
+	let a = parseInt(document.getElementById("a").value);
+	let b = parseInt(document.getElementById("b").value);
+	let wynik = document.getElementById("wynik");
+	wynik.innerHTML = "Wynik: " + (a - b);
+}
+
+function mnozenie() {
+	let a = parseInt(document.getElementById("a").value);
+	let b = parseInt(document.getElementById("b").value);
+	let wynik = document.getElementById("wynik");
+	wynik.innerHTML = "Wynik: " + (a * b);
+}
+
+function dzielenie() {
+	let a = parseInt(document.getElementById("a").value);
+	let b = parseInt(document.getElementById("b").value);
+	let wynik = document.getElementById("wynik");
+	wynik.innerHTML = "Wynik: " + (a / b);
+}
+
+function potegowanie() {
+	let a = parseInt(document.getElementById("a").value);
+	let b = parseInt(document.getElementById("b").value);
+	let wynik = document.getElementById("wynik");
+	wynik.innerHTML = "Wynik: " + (a ** b);
+}
+
+============
+
+mnozenie.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Działania matematyczne</title>
+	<link rel="stylesheet" href="styl.css" />
+</head>
+<body>
+	<div id="baner1">
+		<img src="logo.jpg" alt="matematyka" />
+	</div>
+	<div id="baner2">
+		<h1>Pomocnik Matematyczny</h1>
+	</div>
+	<div id="baner3">
+		<a href="dzialania.html"><h4>Działania</h4></a>
+	</div>
+	<div id="baner4">
+		<a href="mnozenie.html"><h4>Tabliczka mnożenia</h4></a>
+	</div>
+	<div id="lewy">
+		<img src="obraz2.jpg" alt="tabliczka mnożenia" />
+	</div>
+	<div id="prawy">
+		<ul>
+			<li>dodawanie</li>
+			<li>odejmowanie</li>
+			<li>mnożenie</li>
+			<li>dzielenie</li>
+			<li>potęgowanie</li>
+		</ul>
+	</div>
+	<div id="stopka">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+

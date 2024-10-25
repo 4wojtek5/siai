@@ -1,0 +1,175 @@
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi kosmetyczne</title>
+	<link rel="stylesheet" href="styl.css" />
+</head>
+<body>
+	<div id="lewy1">
+		<h2>W ofercie</h2>
+		<ul>
+			<li><a href="twarz.html">Zabiegi na twarz</a>
+				<ol>
+					<li>Piling</li>
+					<li>Maska</li>
+					<li>Regulacja brwi</li>
+				</ol>
+			</li>
+			<li>Masaż</li>
+			<li>Diety oczyszczające</li>
+		</ul>
+		<a href="index.html">Do strony głównej</a>
+	</div>
+	<div id="prawy1">
+		<h1>Salon Kosmetyczny</h1>
+	</div>
+	<div id="prawy2">
+		<img src="obraz2.jpg" alt="Zabiegi kosmetyczne" />
+		<p>Witaj! Miło nam, że odwiedziłeś nasz salon.<br/>
+		Zapoznaj się z ofertą i sprawdź ceny zabiegów lub skontaktuj się z nami</p>
+		<h4>Telefon: 111 222 333</h4>
+	</div>
+	<div id="lewy2">
+		<img src="obraz1.jpg" alt="Kosmetyczka" />
+	</div>
+	<div id="stopka">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+
+main.js
+
+function sprawdz() {
+	let piling = document.getElementById("piling").checked;
+	let maska = document.getElementById("maska").checked;
+	let masaz = document.getElementById("masaz").checked;
+	let regulacja = document.getElementById("regulacja").checked;
+	let wynik = document.getElementById("wynik");
+	let cena = 0;
+	if(piling) cena += 45;
+	if(maska) cena += 30;
+	if(masaz) cena += 20;
+	if(regulacja) cena += 5;
+	wynik.innerHTML = "Cena zabiegów: " + cena;
+}
+
+============
+
+styl.css
+
+body {
+	margin: 0;
+	font-family: Garamond;
+}
+#lewy1 {
+	height: 500px;
+	width: 25%;
+	background: Lavender;
+	float: left;
+}
+#lewy2 {
+	height: 300px;
+	width: 25%;
+	background: Lavender;
+	float: left;
+}
+#prawy1 {
+	height: 150px;
+	width: 75%;
+	background: Indigo;
+	color: white;
+	font-size: 200%;
+	text-align: center;
+	float: right;
+}
+#prawy2 {
+	height: 650px;
+	width: 75%;
+	background: Lavender;
+	font-size: 200%;
+	text-align: center;
+	float: right;
+}
+#stopka {
+	background: Indigo;
+	color: white;
+	text-align: right;
+	clear: both;
+}
+ul {
+	list-style-type: square;
+}
+img {
+	padding: 5px;
+	margin: 10px;
+}
+img:hover {
+	padding: 4px;
+	border: 1px solid Indigo;
+}
+
+============
+
+twarz.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi kosmetyczne</title>
+	<link rel="stylesheet" href="styl.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="lewy1">
+		<h2>W ofercie</h2>
+		<ul>
+			<li><a href="twarz.html">Zabiegi na twarz</a>
+				<ol>
+					<li>Piling</li>
+					<li>Maska</li>
+					<li>Regulacja brwi</li>
+				</ol>
+			</li>
+			<li>Masaż</li>
+			<li>Diety oczyszczające</li>
+		</ul>
+		<a href="index.html">Do strony głównej</a>
+	</div>
+	<div id="prawy1">
+		<h1>Salon Kosmetyczny</h1>
+	</div>
+	<div id="prawy2">
+		<h2>Sprawdź cenę swojej wizyty</h2>
+		<label>
+			<input type="checkbox" id="piling" />Piling<br/>
+		</label>
+		<label>
+			<input type="checkbox" id="maska" />Maska<br/>
+		</label>
+		<label>
+			<input type="checkbox" id="masaz" />Masaż twarzy<br/>
+		</label>
+		<label>
+			<input type="checkbox" id="regulacja" />Regulacja brwi<br/>
+		</label>
+		<button type="button" onclick="sprawdz()">Sprawdź cenę</button>
+		<p id="wynik"></p>
+	</div>
+	<div id="lewy2">
+		<img src="obraz1.jpg" alt="Kosmetyczka" />
+	</div>
+	<div id="stopka">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+

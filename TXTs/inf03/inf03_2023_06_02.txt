@@ -1,0 +1,134 @@
+styl.css
+
+* {
+    font-family: Georgia;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h4 {
+    margin-top: 0;
+}
+
+header,
+footer {
+    background-color: #4ba3c7;
+    color: white;
+    height: 80px;
+    font-size: 120%;
+}
+
+main {
+    display: flex;
+}
+
+.left,
+.right {
+    background-color: #efefef;
+    height: 400px;
+    width: 25%;
+}
+
+.mid {
+    background-color: #90caf9;
+    height: 400px;
+    width: 50%;
+}
+
+table {
+    margin: 10px;
+    width: 90%;
+    border: 1px solid #90caf9;
+}
+td {
+    padding: 5px;
+    border: 1px solid #90caf9;
+}
+tr:hover {
+    color: #90caf9
+}
+input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+============
+
+index.php
+
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl.css">
+    <title>Hurtownia szkolna</title>
+</head>
+
+<body>
+    <header>
+        <h1>Hurtownia z najlepszymi cenami</h1>
+    </header>
+    <main>
+        <section class="left">
+            <h2>Nasze ceny</h2>
+            <table>
+                <?php
+                $con = mysqli_connect('localhost', 'root', '', 'sklep');
+                $q = 'SELECT nazwa, cena FROM towary LIMIT 4;';
+                $result = mysqli_query($con, $q);
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr><td>$row[0]</td></tr>";
+                }
+                ?>
+            </table>
+        </section>
+        <section class="mid">
+            <h2>Koszt zakupów</h2>
+            <form action="index.php" method="post">
+                wybierz artykuł:
+                <select name="list">
+                    <option value="Zeszyt 60 kartek">Zeszyt 60 kartek</option>
+                    <option value="Zeszyt 32 kartki">Zeszyt 32 kartki</option>
+                    <option value="Cyrkiel">Cyrkiel</option>
+                    <option value="Linijka 30 cm">Linijka 30 cm</option>
+                </select>
+                <br />
+                liczba sztuk: <input type="number" name="ilosc"><br />
+                <button type="submit" name="submit">OBLICZ</button>
+            </form>
+            <p class="result">
+                <?php
+                if (isset($_POST['submit'])) {
+                    $produkt = $_POST['list'];
+                    $ilosc = $_POST['ilosc'];
+                    $q = "SELECT cena FROM towary WHERE nazwa = '$produkt';";
+                    $res = mysqli_query($con, $q);
+                    while ($row = mysqli_fetch_array($res)) {
+                        $cena = $row[0] * $ilosc;
+                        echo "wartość zakupów: $cena";
+                    }
+                }
+                mysqli_close($con);
+                ?>
+            </p>
+        </section>
+        <section class="right">
+            <h2>Kontakt</h2>
+            <p>e-mail: <a href="mailto:hurt@poczta2.pl">hurt@poczta2.pl</a></p>
+            <img src="zakupy.png" alt="hurtownia">
+        </section>
+    </main>
+    <footer>
+        <h4>Witrynę wykonał: Chriskyy</h4>
+    </footer>
+</body>
+
+</html>
+
+============
+

@@ -1,0 +1,120 @@
+styl7.css
+
+body {
+	margin: 0;
+	font-family: Helvetica;
+}
+#baner,
+#stopka {
+	background: rgb(70, 130, 180);
+	color: white;
+	height: 30px;
+	text-align: center;
+	clear: both;
+}
+#glowny {
+	background: rgb(176, 196, 222);
+	padding: 50px;
+	text-align: center;
+}
+#lewy {
+	background: rgb(70, 130, 180);
+	color: white;
+	height: 300px;
+	width: 80%;
+	float: left;
+}
+#prawy {
+	background: rgb(70, 130, 180);
+	color: white;
+	height: 300px;
+	width: 20%;
+	float: left;
+}
+#glowny img {
+	padding: 3px;
+	border: 1px dashed blue;
+	border-radius: 10px;
+}
+#lewy img {
+	height: 40%;
+}
+#lewy img:hover {
+	border: 1px solid white;
+}
+h2 {
+	margin: 0;
+}
+
+============
+
+main.js
+
+function zmienImg(img) {
+    const obraz = document.getElementById('zmiana')
+    obraz.src = img
+}
+
+let zmiana = 0
+function polubZmien() {
+    zmiana++
+    const polub = document.getElementById("polub")
+    if (zmiana % 2 == 0) {
+        polub.src = "icon-off.png"
+    } else {
+        polub.src = "icon-on.png"
+    }
+}
+
+============
+
+galeria.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Galeria</title>
+	<link rel="stylesheet" href="styl7.css" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="baner">
+		<h2>Galeria miejsc ciekawych</h2>
+	</div>
+	<div id="glowny">
+		<img src="lanzarotte.jpg" alt="galeria" id="zmiana" />
+	</div>
+	<div id="lewy">
+		<h3>Przeglądaj zdjęcia</h3>
+		<img src="lanzarotte.jpg" alt="lanzarotte" onclick="zmienImg('lanzarotte.jpg')" />
+		<img src="pekin.jpg" alt="pekin" onclick="zmienImg('pekin.jpg')" />
+		<img src="serengeti.jpg" alt="serengeti" onclick="zmienImg('serengeti.jpg')" />
+		<img src="wenecja.jpg" alt="wenecja" onclick="zmienImg('wenecja.jpg')" />
+		<img src="tajlandia.jpg" alt="tajlandia" onclick="zmienImg('tajlandia.jpg')" />
+	</div>
+	<div id="prawy">
+		<h3>Obrazy w naszej galerii</h3>
+		<table>
+			<tr>
+				<td>Europa</td>
+				<td>Azja</td>
+				<td>Afryka</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>2</td>
+				<td>1</td>
+			</tr>
+		</table>
+		<p>Polub nas<img src="icon-off.png" id="polub" onclick="polubZmien();"/></p>
+		<a href="https://pixabay.com" target="_blank">Odkryj więcej zdjęć</a>
+	</div>
+	<div id="stopka">
+		Autor: Chriskyy#0181
+	</div>
+</body>
+</html>
+
+============
+

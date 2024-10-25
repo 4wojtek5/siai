@@ -1,0 +1,144 @@
+galeria.html
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+
+<body>
+    <header>
+        <h1>Galeria obrazów</h1>
+    </header>
+    <main>
+        <section id="panelLewy">
+            <img src="zdjecie.jpg" alt="zdjęcie dnia" />
+            <h3>Zdjęcia opublikowali</h3>
+            <table>
+                <tr>
+                    <td>Anna Porada</td>
+                    <td>10 zdjęc</td>
+                </tr>
+                <tr>
+                    <td>Krzysztof Wasilewski</td>
+                    <td>12 zdjęc</td>
+                </tr>
+                <tr>
+                    <td>Monika Kowalska</td>
+                    <td>4 zdjęcia</td>
+                </tr>
+            </table>
+        </section>
+        <section id="panelPrawy">
+            <button type="button" onclick="prev()">prev</button>
+            <img id="glowne" src="1.jpg" alt="galeria" />
+            <button type="button" onclick="next()">next</button>
+            <hr />
+            <img src="1.jpg" alt="miniatura" onclick="zamiana('1.jpg',1)" />
+            <img src="2.jpg" alt="miniatura" onclick="zamiana('2.jpg',2)" />
+            <img src="3.jpg" alt="miniatura" onclick="zamiana('3.jpg',3)" />
+            <img src="4.jpg" alt="miniatura" onclick="zamiana('4.jpg',4)" />
+            <img src="5.jpg" alt="miniatura" onclick="zamiana('5.jpg',5)" />
+        </section>
+    </main>
+    <footer>
+        <a href="https://pixabay.com" target="_blank">Więcej obrazów</a>
+        <p>Galerię wykonał: Chriskyy#0181</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+============
+
+styl2.css
+
+body {
+    margin: 0;
+}
+* {
+    font-family: Garamond;
+    background-color: MistyRose;
+    color: rgb(62, 39, 35);
+    text-align: center;
+}
+main {
+    display: flex;
+}
+#panelLewy {
+    width: 20%;
+    height: 600px;
+    margin: 30px;
+    box-shadow: 15px 15px 10px DimGray;
+    overflow: auto;
+}
+
+img {
+    width: 100%;
+}
+
+#panelPrawy {
+    width: 65%;
+    height: 600px;
+}
+
+img[alt="miniatura"] {
+    width: 140px;
+    padding: 2px;
+    border-radius: 5%;
+}
+
+img[alt="miniatura"]:hover {
+    border: 1px dotted black;
+}
+
+#zmiana {
+    width: 500px;
+    margin: 30px;
+    box-shadow: 15px 15px 10px DimGray;
+}
+table {
+    border: 1px dashed black;
+    width: 100%;
+}
+
+============
+
+main.js
+
+let nr = 1
+function zamiana(src, numer) {
+    let glowne = document.getElementById('glowne')
+    glowne.src = src
+    nr = numer
+
+}
+
+function prev() {
+    let aktualne = document.getElementById('glowne')
+    nr--
+    if (nr == 0) nr = 5
+    if (nr == 1) aktualne.src = '1.jpg'
+    if (nr == 2) aktualne.src = '2.jpg'
+    if (nr == 3) aktualne.src = '3.jpg'
+    if (nr == 4) aktualne.src = '4.jpg'
+    if (nr == 5) aktualne.src = '5.jpg'
+}
+
+function next() {
+    let aktualne = document.getElementById('glowne')
+    nr++
+    if (nr == 6) nr = 1
+    if (nr == 1) aktualne.src = '1.jpg'
+    if (nr == 2) aktualne.src = '2.jpg'
+    if (nr == 3) aktualne.src = '3.jpg'
+    if (nr == 4) aktualne.src = '4.jpg'
+    if (nr == 5) aktualne.src = '5.jpg'
+}
+
+============
+

@@ -1,0 +1,182 @@
+main.js
+
+function formularz() {
+	let imie = document.getElementById("imie").value;
+	let nazwisko = document.getElementById("nazwisko").value;
+	let email = document.getElementById("email").value.toLowerCase();
+	let usluga = document.getElementById("lista");
+	let wynik = document.getElementById("wynik");
+	wynik.innerHTML = imie + " " + nazwisko + "<br/>" + email + "<br/>" + "Usługa: " + lista.value;
+}
+
+============
+
+index.html
+
+<!DOCTPYE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Pogotowie komputerowe</title>
+	<link rel="stylesheet" href="styl.css" />
+	<link rel="icon" href="favicon.png" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="kontener">
+		<div id="baner">
+			<img src="animacja.gif" />
+		</div>
+		<div id="menu">
+			<a href="index.html">O nas</a>
+			<a href="kontakt.html">Kontakt</a>
+		</div>
+		<div id="glowny1">
+			<h2>Kim jesteśmy?</h2>
+			<p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
+		</div>
+		<div id="glowny2">
+			<h2>Co robimy?</h2>
+			<ul>
+				<li>naprawiamy komputery stacjonarne i laptopy</li>
+				<li>odzyskujemy dane</li>
+				<li>usuwamy problemy z oprogramowaniem</li>
+				<li>konfigurujemy sieć LAN</li>
+				<li>i wiele więcej</li>
+			</ul>
+		</div>
+		<div id="glowny3">
+			<h2>Co nas cechuje?</h2>
+			<p>Doświadczenie, niezawodnośćm konkurencyjne ceny.</p>
+		</div>
+		<div id="stopka">
+			<p>Autor strony: <b>PESEL</b></p>
+		</div>
+	</div>
+</body>
+</html>
+
+============
+
+styl.css
+
+body {
+	box-sizing: border-box;
+	background: #99FFCC;
+}
+#kontener {
+	width: 1000px;
+	margin: auto;
+}
+#baner {
+	background: #99FF66;
+	height: 200px;
+}
+#menu {
+	background: #66CCFF;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#glowny1, #glowny2, #glowny3 {
+	width: 310px;
+	padding: 10px;
+	float: left;
+}
+#stopka {
+	background: #66CCFF;
+	color: #006666;
+	text-align: right;
+	height: 30px;
+	padding: 20px;
+	clear: both;
+}
+#menu a {
+	color: #006666;
+	margin: 50px;
+	font-size: 200%;
+	text-decoration: none;
+}
+h2, h3 {
+	text-align: center;
+}
+button[type=reset] {
+	background: #FF0000;
+}
+button[type=button] {
+	background: #00FF00;
+}
+
+============
+
+kontakt.html
+
+<!DOCTPYE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Pogotowie komputerowe</title>
+	<link rel="stylesheet" href="styl.css" />
+	<link rel="icon" href="favicon.png" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="kontener">
+		<div id="baner">
+			<img src="animacja.gif" />
+		</div>
+		<div id="menu">
+			<a href="index.html">O nas</a>
+			<a href="kontakt.html">Kontakt</a>
+		</div>
+		<div id="glowny1"></div>
+		<div id="glowny2">
+			<h3>Formularz kontaktowy</h3>
+			<form>
+				<table>
+					<tr>
+						<td>Imię:</td>
+						<td><input type="text" id="imie" /></td>
+					</tr>
+					<tr>
+						<td>Nazwisko:</td>
+						<td><input type="text" id="nazwisko" /></td>
+					</tr>
+					<tr>
+						<td>E-mail:</td>
+						<td><input type="text" id="email" /></td>
+					</tr>
+					<tr>
+						<td>Usługa:</td>
+						<td>
+							<select id="lista">
+								<option value="naprawa komputera">naprawa komputera</option>
+								<option value="odzyskiwanie danych">odzyskiwanie danych</option>
+								<option value="problemy z oprogramowaniem">problemy z oprogramowaniem</option>
+								<option value="konfiguracja sieci LAN">konfiguracja sieci LAN</option>
+								<option value="inne">inne</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="checkbox" id="check" checked />Wyślij kopię wiadomości</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button type="reset">Resetuj</button><button type="button" onclick="formularz();">Prześlij</button></td>
+					</tr>
+				</table>
+			</form>
+			<p id="wynik">
+		</div>
+		<div id="glowny3"></div>
+		<div id="stopka">
+			<p>Autor strony: <b>PESEL</b></p>
+		</div>
+	</div>
+</body>
+</html>
+
+============
+

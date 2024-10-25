@@ -1,0 +1,223 @@
+uslugi.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi informatyczne</title>
+	<link rel="stylesheet" href="styl.css" />
+	<link rel="icon" href="logo.png" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="kontener">
+		<div id="logo">
+			<img src="logo.png" alt="logo firmy" />
+		</div>
+		<div id="menu">
+			<a href="index.html">O nas</a>
+			<a href="uslugi.html">Usługi</a>
+			<a href="kontakt.html">Kontakt</a>
+		</div>
+		<div id="baner">
+			<img src="animacja.gif" />
+		</div>
+		<div id="glowny">
+			<hr/>
+			<h1>Oferowane usługi</h1>
+			<ul>
+				<li>Outsourcing IT</li>
+				<li>Instalacja i konfiguracja systemów operacyjnych</li>
+				<li>Sprzęt komputerowy</li>
+				<li>Sweris komputerów</li>
+				<li>Projektowanie i aktualizacja stron WWW</li>
+				<li>Hosting</li>
+			</ul>
+			<hr/>
+		</div>
+		<div id="stopka">
+			<p>Autor strony: <b>PESEL</p>
+		</div>
+	</div>
+</body>
+</html>
+
+============
+
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi informatyczne</title>
+	<link rel="stylesheet" href="styl.css" />
+	<link rel="icon" href="logo.png" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="kontener">
+		<div id="logo">
+			<img src="logo.png" alt="logo firmy" />
+		</div>
+		<div id="menu">
+			<a href="index.html">O nas</a>
+			<a href="uslugi.html">Usługi</a>
+			<a href="kontakt.html">Kontakt</a>
+		</div>
+		<div id="baner">
+			<img src="animacja.gif" />
+		</div>
+		<div id="glowny">
+			<hr/>
+			<h1>Firma IT - Usługi Informatyczne</h1>
+			<p>Kesteśmy firmą z wieloletnik doświadczeniem w zakresie IT.</p>
+			<p>Co nas cechuje? Doświadczenie, niezawodność, konkurencyjne ceny.</p>
+			<hr/>
+		</div>
+		<div id="stopka">
+			<p>Autor strony: <b>PESEL</b></p>
+		</div>
+	</div>
+</body>
+</html>
+
+============
+
+main.js
+
+function formularz() {
+	let check = document.getElementById("check").checked;
+	if(check) {
+		let wynik = document.getElementById("wynik");
+		let imie = (document.getElementById("imie").value).toUpperCase();
+		let nazwisko = (document.getElementById("nazwisko").value).toUpperCase();
+		let usluga = document.getElementById("usluga").value;
+		wynik.innerHTML = imie + " " + nazwisko + "<br/>" + "Treść Twojej sprawy: " + usluga + "<br/>" + "Na podany e-mail zostanie wysłana oferta."; 
+	} else {
+		wynik.innerHTML = "<span style='color: red;'>Musisz zapoznać się z regulaminem</span>";
+	}
+}
+
+============
+
+kontakt.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi informatyczne</title>
+	<link rel="stylesheet" href="styl.css" />
+	<link rel="icon" href="logo.png" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="kontener">
+		<div id="logo">
+			<img src="logo.png" alt="logo firmy" />
+		</div>
+		<div id="menu">
+			<a href="index.html">O nas</a>
+			<a href="uslugi.html">Usługi</a>
+			<a href="kontakt.html">Kontakt</a>
+		</div>
+		<div id="baner">
+			<img src="animacja.gif" />
+		</div>
+		<div id="glowny">
+			<hr/>
+			<h2>Kontakt</h2>
+			<form>
+				<table>
+					<tr>
+						<td>Imię:</td>
+						<td><input type="text" id="imie" /></td>
+					</tr>
+					<tr>
+						<td>Nazwisko:</td>
+						<td><input type="text" id="nazwisko" /></td>
+					</tr>
+					<tr>
+						<td>E-mail:</td>
+						<td><input type="text" id="email" /></td>
+					</tr>
+					<tr>
+						<td>Usługa:</td>
+						<td><textarea id="usluga"></textarea></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="checkbox" id="check" />Zapoznałam/em się z regulaminem</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button type="reset" />Resetuj</button><button type="button" onclick="formularz();">Prześlij</button></td>
+					</tr>
+				</table>
+			</form>
+			<p id="wynik"></p>
+			<hr/>
+		</div>
+		<div id="stopka">
+			<p>Autor strony: <b>PESEL</b></p>
+		</div>
+	</div>
+</body>
+</html>
+
+============
+
+styl.css
+
+body {
+	box-sizing: border-box;
+	background: #EEEEEE;
+}
+#kontener {
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+}
+#logo, #menu, #stopka {
+	background: #C0C0C0;
+	height: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#logo {
+	width: 400px;
+	float: left;
+}
+#menu {
+	width: 600px;
+	float: left;
+}
+#baner {
+	background: #DDDDDD;
+	height: 200px;
+	clear: both;
+}
+#glowny {
+	margin: 50px;
+}
+#stopka {
+	text-align: right;
+}
+#menu a {
+	color: #555555;
+	margin: 50px;
+	font-size: 200%;
+	text-decoration: none;
+}
+hr {
+	background: #C0C0C0;
+	width: 70%;
+	height: 2px;
+}
+table {
+	text-align: left;
+}
+
+============
+

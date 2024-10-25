@@ -1,0 +1,176 @@
+cena.html
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>malarz</title>
+    <link rel="stylesheet" href="styl_1.css">
+</head>
+
+<body>
+    <header>
+        <h1>Malowanie pokoi i biur</h1>
+    </header>
+    <main>
+        <section id="panelLewy">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="mieszamy.html">Mieszamy</a></li>
+                <li><a href="cena.html">Wyceniamy</a></li>
+            </ul>
+        </section>
+        <section id="panelSrodkowy">
+            <h2>Zapotrzebowanie na farbę</h2>
+            <label>Powierzchnia malowania (m<sup>2</sup>):
+                <input type="number" id="powierzchnia" />
+            </label>
+            <button type="button" onclick="policzFarba()">Policz</button>
+            <p id="wynik"></p>
+        </section>
+        <section id="panelPrawy">
+            <img src="obraz.png" alt="Próbki farb" />
+        </section>
+    </main>
+    <footer>
+        <h3>MALARZ</h3>
+        <p>Stronę opracował: Chriskyy#0181</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+============
+
+mieszamy.html
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>malarz</title>
+    <link rel="stylesheet" href="styl_1.css">
+</head>
+
+<body>
+    <header>
+        <h1>Malowanie pokoi i biur</h1>
+    </header>
+    <main>
+        <section id="panelLewy">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="mieszamy.html">Mieszamy</a></li>
+                <li><a href="cena.html">Wyceniamy</a></li>
+            </ul>
+        </section>
+        <section id="panelSrodkowy">
+            <h2>Barwy i ich pochodne</h2>
+            <table>
+                <tr>
+                    <th colspan="2">Składowe</th>
+                    <th>Wynik</th>
+                </tr>
+                <tr>
+                    <td>żółty</td>
+                    <td>czerwony</td>
+                    <td>pomarańczowy</td>
+                </tr>
+                <tr>
+                    <td>czerwony</td>
+                    <td>niebieski</td>
+                    <td>fioletowy</td>
+                </tr>
+            </table>
+        </section>
+        <section id="panelPrawy">
+            <img src="obraz.png" alt="Próbki farb" />
+        </section>
+    </main>
+    <footer>
+        <h3>MALARZ</h3>
+        <p>Stronę opracował: Chriskyy#0181</p>
+    </footer>
+</body>
+
+</html>
+
+============
+
+styl_1.css
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: Cambria;
+}
+
+header,
+footer {
+    background-color: #829EB9;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+}
+
+#panelLewy,
+#panelPrawy {
+    background-color: #B3C6D9;
+    height: 400px;
+    width: 25%;
+    padding-top: 100px;
+}
+
+#panelSrodkowy {
+    background-color: #E0E9F1;
+    height: 400px;
+    width: 50%;
+    text-align: center;
+    padding-top: 100px;
+}
+
+table {
+    border: 1px solid DimGray;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid DimGray;
+    border-collapse: collapse;
+}
+
+td:hover {
+    background-color: SteelBlue;
+    color: white
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+============
+
+main.js
+
+function policzFarba() {
+    let powierzchnia = +document.getElementById('powierzchnia').value
+    let wynik = document.getElementById('wynik')
+    wynik.innerHTML = "Liczba potrzebnych puszek: " + Math.abs(Math.ceil(powierzchnia / 4))
+}
+
+============
+

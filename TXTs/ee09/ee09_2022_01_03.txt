@@ -1,0 +1,129 @@
+dodanie.php
+
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'ee09');
+if(!empty($_POST['nr']) && !empty($_POST['rat1']) && !empty($_POST['rat2']) && !empty($_POST['rat3'])) {
+	$nr = $_POST['nr'];
+	$rat1 = $_POST['rat1'];
+	$rat2 = $_POST['rat2'];
+	$rat3 = $_POST['rat3'];
+	$kw = "INSERT INTO ratownicy VALUES (NULL, $nr, '$rat1', '$rat2', '$rat3');";
+	mysqli_query($con, $kw);
+	echo "Do bazy zostało wysłane zapytanie: $kw";
+}
+mysqli_close($con);
+?>
+
+============
+
+ratownicy.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Zespoły ratownicze</title>
+	<link rel="stylesheet" href="styl3.css" />
+</head>
+<body>
+	<div id="baner1">
+		<h2>Dodanie zespołu ratowniczego</h2>
+	</div>
+	<div id="baner2">
+		<p>Kontakt:<br/>022 222 11 333</p>
+	</div>
+	<div id="baner3">
+		<img src="obraz.jpg" alt="Ratownicy" />
+	</div>
+	<div id="glowny">
+		<h3>Dodaj nowy zespół</h3>
+		<form action="dodanie.php" method="post">
+			<label>
+				Numer karetki:<br/>
+				<input type="number" name="nr" /><br/>
+			</label>
+			<label>
+				Imię i nazwisko pierwszego ratownika:<br/>
+				<input type="text" name="rat1" /><br/>
+			</label>
+			<label>
+				Imię i nazwisko drugiego ratownika:<br/>
+				<input type="text" name="rat2" /><br/>
+			</label>
+			<label>
+				Imię i nazwisko trzeciego ratownika:<br/>
+				<input type="text" name="rat3" /><br/>
+			</label>
+			<button type="reset">CZYŚĆ</button>
+			<button>DODAJ</button>
+		</form>
+	</div>
+	<div id="stopka1">
+		<a href="kwerendy.txt">Zobacz kwerendy</a>
+	</div>
+	<div id="stopka2">
+		<h5>Przypominamy numery alarmowe</h5>
+		<ol>
+			<li>112</li>
+			<li>999</li>
+		</ol>
+	</div>
+	<div id="stopka3">
+		<p>Autor: Chriskyy#0181</p>
+	</div>
+</body>
+</html>
+
+============
+
+styl3.css
+
+body {
+	margin: 0;
+	font-family: Arial;
+}
+#baner1,
+#baner2,
+#baner3,
+#stopka1,
+#stopka2,
+#stopka3 {
+	background: SaddleBrown;
+	color: white;
+	height: 100px;
+}
+#baner1,
+#stopka1 {
+	width: 55%;
+	font-size: 120%;
+	float: left;
+}
+#baner2,
+#stopka2 {
+	width: 25%;
+	float: left;
+}
+#baner3,
+#stopka3 {
+	width: 20%;
+	text-align: right;
+	float: left;
+}
+#glowny {
+	background: Snow;
+	padding: 70px;
+	clear: both;
+}
+a {
+	border: 2px dotted SaddleBrown;
+	background: Snow;
+	color: SaddleBrown;
+	padding: 20px;
+	line-height: 100px;
+}
+ol {
+	list-style-type: lower-latin;
+}
+
+============
+
