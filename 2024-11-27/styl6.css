@@ -1,0 +1,23 @@
+*{
+    font-family: georgia;
+}
+.left{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    scroll-behavior: auto;
+}
+footer{
+    background-color: dimgray;
+    color: white;
+}
+p{
+    padding: 10px;
+}
+img{
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
