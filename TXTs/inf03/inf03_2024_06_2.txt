@@ -1,0 +1,210 @@
+skrypt.js
+
+const odpowiedzi = [
+    "Świetnie!",
+    "Kto gra główną rolę?",
+    "Lubisz filmy Tego reżysera?",
+    "Będę 10 minut wcześniej",
+    "Może kupimy sobie popcorn?",
+    "Ja wolę Colę",
+    "Zaproszę jeszcze Grześka",
+    "Tydzień temu też byłem w kinie na Diunie",
+    "Ja funduję bilety"
+];
+
+function wyslij() {
+    const messageInput = document.getElementById('wiadomosc');
+    const chat = document.getElementById('chat');
+
+    const jolkaDiv = document.createElement('div');
+    jolkaDiv.classList.add('jolka');
+
+    const jolkaImg = document.createElement('img');
+    jolkaImg.src = 'Jolka.jpg';
+    jolkaImg.alt = 'Jolanta Nowak';
+
+    const jolkaP = document.createElement('p');
+    jolkaP.textContent = messageInput.value;
+
+    jolkaDiv.appendChild(jolkaImg);
+    jolkaDiv.appendChild(jolkaP);
+    chat.appendChild(jolkaDiv);
+
+    chat.scrollTop = chat.scrollHeight;
+
+    messageInput.value = '';
+}
+
+function generuj() {
+    const randomIndex = Math.floor(Math.random() * odpowiedzi.length);
+    const randomResponse = odpowiedzi[randomIndex];
+    const chat = document.getElementById('chat');
+
+    const krzysiekDiv = document.createElement('div');
+    krzysiekDiv.classList.add('krzysiek');
+
+    const krzysiekImg = document.createElement('img');
+    krzysiekImg.src = 'Krzysiek.jpg';
+    krzysiekImg.alt = 'Krzysztof Łukasiński';
+
+    const krzysiekP = document.createElement('p');
+    krzysiekP.textContent = randomResponse;
+
+    krzysiekDiv.appendChild(krzysiekImg);
+    krzysiekDiv.appendChild(krzysiekP);
+    chat.appendChild(krzysiekDiv);
+
+    chat.scrollTop = chat.scrollHeight;
+}
+
+
+============
+
+chat.html
+
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat</title>
+        <link rel="stylesheet" href="styl.css">
+    </head>
+    <body>
+        <header>
+            <h2>Chat</h2>
+        </header>
+
+        <div id="sidebar">
+            <h3>Chaty</h3>
+            <ul>
+                <li>Ogólny</li>
+                <li>Tematyczn
+                    <ol>
+                        <li>Turystyczny</li>
+                        <li>Żeglarski</li>
+                        <li>Filatelistyczny</li>
+                        <li>Hodowla zwierzątek domowych</li>
+                    </ol>
+                </li>
+            </ul>
+            <h3>Uczestnicy</h3>
+            <p>Jolanta Nowak</p>
+            <img src="Jolka.jpg" alt="Jolanta Nowak">
+            <p>Krzysztof Łukasiński</p>
+            <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+        </div>
+
+        <main>
+            <div id="chat">
+                <div class="jolka">
+                    <img src="Jolka.jpg" alt="Jolanta Nowak">
+                    <p>Cześć idziesz jutro do kina?</p>
+                </div>
+
+                <div class="krzysiek">
+                    <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+                    <p>Tak! A Ty?</p>
+                </div>
+            </div>
+            <label for="wiadomosc">Wpisz wiadomość: </label>
+            <input type="text" name="wiadomosc" id="wiadomosc">
+            <button onclick="wyslij()">Wyślij</button><br>
+            <button onclick="generuj()">Generuj losową odpowiedź</button>
+            <script src="skrypt.js"></script>
+        </main>
+
+        <footer>
+            <h5>Chat wykonał: <a href="https://ee-informatyk.pl/" target="_blank" style="text-decoration: none;color: unset;">EE-Informatyk.pl</a></h5>
+        </footer>
+    </body>
+</html>
+
+============
+
+styl.css
+
+* {
+    font-family: 'Garamond';
+}
+
+header {
+    background-color: Tomato;
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 80px;
+    float: left;
+}
+
+main {
+    width: 80%;
+    height: 600px;
+    float: left;
+}
+
+#sidebar {
+    background-color: Coral;
+    width: 20%;
+    height: 680px;
+    float: right;
+}
+
+footer {
+    clear: both;
+    background-color: Tomato;
+    color: white;
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#chat {
+    border: 1px solid Tomato;
+    margin: 15px;
+    height: 470px;
+    overflow: scroll;
+}
+
+#chat > div {
+    border-radius: 5px;
+    width: 90%;
+    height: 70px;
+    margin: 2%;
+    padding: 3px;
+}
+
+#chat > div.jolka {
+    background-color: #EEE;
+}
+
+#chat > div.jolka img {
+    float: left;
+}
+
+#chat > div.krzysiek {
+    background-color: #CCC;
+    text-align: right;
+}
+
+#chat > div.krzysiek img {
+    float: right;
+}
+
+button {
+    background-color: Tomato;
+    border: 1px solid DarkRed;
+    padding: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 500px;
+}
+
+============
+
