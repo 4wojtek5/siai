@@ -46,6 +46,43 @@ galeria.html
 
 ============
 
+kwerendy.txt
+
+Zapytanie 1: SELECT miejsce, liczbaDni FROM wycieczki WHERE cena < 1000;
+Zapytanie 2: SELECT liczbaDni, AVG(cena) AS sredniaCena FROM wycieczki GROUP BY liczbaDni;
+Zapytanie 3: SELECT miejsce, nazwa FROM Wycieczki JOIN Zdjecia ON Wycieczki.id = Wycieczki_id WHERE cena > 500;
+Zapytanie 4: CREATE USER 'Ewa'@'localhost' IDENTIFIED BY 'Ewa!Ewa';
+
+============
+
+skrypt.js
+
+let zdjecieIndex = 1;
+const zdjecia = 7;
+
+function kolejne() {
+    zdjecieIndex++;
+    if (zdjecieIndex > zdjecia) {
+        zdjecieIndex = 1;
+    }
+    aktualizacja();
+}
+
+function poprzednie() {
+    zdjecieIndex--;
+    if (zdjecieIndex < 1) {
+        zdjecieIndex = zdjecia;
+    }
+    aktualizacja();
+}
+
+function aktualizacja() {
+    const zdjecieElement = document.querySelector("#srodkowy img");
+    zdjecieElement.src = zdjecieIndex + ".jpg";
+}
+
+============
+
 styl.css
 
 * {
@@ -116,34 +153,6 @@ button {
     transform: scale(1.2);
 }
 
-
-============
-
-skrypt.js
-
-let zdjecieIndex = 1;
-const zdjecia = 7;
-
-function kolejne() {
-    zdjecieIndex++;
-    if (zdjecieIndex > zdjecia) {
-        zdjecieIndex = 1;
-    }
-    aktualizacja();
-}
-
-function poprzednie() {
-    zdjecieIndex--;
-    if (zdjecieIndex < 1) {
-        zdjecieIndex = zdjecia;
-    }
-    aktualizacja();
-}
-
-function aktualizacja() {
-    const zdjecieElement = document.querySelector("#srodkowy img");
-    zdjecieElement.src = zdjecieIndex + ".jpg";
-}
 
 ============
 

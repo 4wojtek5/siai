@@ -1,48 +1,9 @@
-styl_1.css
+kwerendy.txt
 
-body {
-	margin: 0;
-	background: #F6E5DC;
-	font-family: Verdana;
-}
-header {
-	background: #2F180C;
-	text-align: center;
-	color: khaki;
-	height: 60px;
-}
-#lewy {
-	width: 60%;
-	float: left;
-}
-#prawy {
-	font-size: 150%;
-	padding: 70px;
-	float: left;
-}
-#dolny {
-	background: #D0B6A8;
-	text-align: center;
-	padding: 30px;
-	clear: both;
-}
-footer {
-	background: #2F180C;
-	color: khaki;
-	height: 60px;
-}
-img {
-	height: 350px;
-}
-button {
-	margin: 10px;
-	padding: 5px;
-	background: #2F180C;
-	color: khaki;
-}
-h1 {
-	margin: 0;
-}
+1. INSERT INTO rezerwacje VALUES (NULL, 1'2017-07-04', 4, '111222333');
+2. SELECT nazwa, cena FROM dania WHERE typ = 2;
+3. SELECT nazwa FROM dania WHERE typ = 3 AND CENA < 15;
+4. UPDATE pracownicy SET stanowisko = 4 WHERE stanowisko = 3;
 
 ============
 
@@ -117,6 +78,54 @@ if(isset($_POST['rezerwuj'])) {
 }
 mysqli_close($con);
 ?>
+
+============
+
+styl_1.css
+
+body {
+	margin: 0;
+	background: #F6E5DC;
+	font-family: Verdana;
+}
+header {
+	background: #2F180C;
+	text-align: center;
+	color: khaki;
+	height: 60px;
+}
+#lewy {
+	width: 60%;
+	float: left;
+}
+#prawy {
+	font-size: 150%;
+	padding: 70px;
+	float: left;
+}
+#dolny {
+	background: #D0B6A8;
+	text-align: center;
+	padding: 30px;
+	clear: both;
+}
+footer {
+	background: #2F180C;
+	color: khaki;
+	height: 60px;
+}
+img {
+	height: 350px;
+}
+button {
+	margin: 10px;
+	padding: 5px;
+	background: #2F180C;
+	color: khaki;
+}
+h1 {
+	margin: 0;
+}
 
 ============
 

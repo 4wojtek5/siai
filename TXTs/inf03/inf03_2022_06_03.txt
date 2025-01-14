@@ -1,18 +1,9 @@
-zgloszenie.php
+kwerendy.txt
 
-<?php
-$con = mysqli_connect('localhost', 'root', '', 'wedkarstwo');
-
-if(isset($_POST['dodaj'])) {
-	$lowisko = $_POST['lowisko'];
-	$data = $_POST['data'];
-	$sedzia = $_POST['sedzia'];
-	
-	$q = "INSERT INTO zawody_wedkarskie VALUES (NULL, 0, $lowisko, '$data', '$sedzia');";
-	mysqli_query($con, $q);
-}
-mysqli_close($con);
-?>
+1. INSERT INTO zawody_wedkarskie VALUES (NULL, 2, 4, '2021-09-28', 'Andrzej Nowak');
+2. SELECT id, data_zawodow FROM zawody_wedkarskie WHERE sedzia = 'Andrzej Nowak';
+3. SELECT karty_wedkarskie.imie, karty_wedkarskie.nazwisko, karty_wedkarskie.punkty FROM karty_wedkarskie INNER JOIN zawody_wedkarskie ON karty_wedkarskie.id = zawody_wedkarskie.Karty_wedkarskie_id WHERE zawody_wedkarskie.id = 4;
+4. UPDATE karty_wedkarskie SET punkty = punkty + 2 WHERE id = 1;
 
 ============
 
@@ -123,6 +114,24 @@ zawody.html
 		</section>
 </body>
 </html>
+
+============
+
+zgloszenie.php
+
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'wedkarstwo');
+
+if(isset($_POST['dodaj'])) {
+	$lowisko = $_POST['lowisko'];
+	$data = $_POST['data'];
+	$sedzia = $_POST['sedzia'];
+	
+	$q = "INSERT INTO zawody_wedkarskie VALUES (NULL, 0, $lowisko, '$data', '$sedzia');";
+	mysqli_query($con, $q);
+}
+mysqli_close($con);
+?>
 
 ============
 

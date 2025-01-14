@@ -1,68 +1,3 @@
-styl.css
-
-* {
-    font-family: 'Roboto', 'Serif';
-}
-
-header {
-    background-color: Crimson;
-    color: white;
-    text-align: center;
-    letter-spacing: 5px;
-    word-spacing: 30px;
-    padding: 10px;
-}
-
-#main1 {
-    background-color: MistyRose;
-    height: 300px;
-    padding: 10px;
-    margin: 10px 50px;
-    border: 1px solid Crimson;
-}
-
-#main1 img {
-    float: left;
-    height: 100%;
-}
-
-#main2 div,
-#main3 div {
-    background-color: Snow;
-    height: 450px;
-    width: 21%;
-    margin: 1%;
-    text-align: center;
-    border: 1px solid crimson;
-    float: left;
-}
-
-#main3 {
-    clear: both;
-}
-
-footer {
-    background-color: Crimson;
-    color: white;
-    clear: both;
-}
-
-img {
-    max-width: 100%;
-}
-
-h4 {
-    font-size: 180%;
-    text-align: center;
-    color: crimson;
-}
-
-a {
-    color: white;
-}
-
-============
-
 KupAuto.php
 
 <?php
@@ -155,6 +90,87 @@ KupAuto.php
 <?php
     $conn -> close();
 ?>
+
+============
+
+kwerendy.txt
+
+Zapytanie 1: SELECT nazwa FROM marki;
+Zapytanie 2: SELECT model, rocznik, przebieg, paliwo, cena, zdjecie FROM samochody WHERE id=10;
+Zapytanie 3: SELECT nazwa, model, rocznik, cena, zdjecie FROM samochody JOIN marki ON marki_id = marki.id WHERE wyrozniony=1 LIMIT 4;
+Zapytanie 4: SELECT model, cena, zdjecie FROM samochody JOIN marki ON marki_id = marki.id WHERE nazwa = "Audi";
+
+============
+
+przegladarka.txt
+
+Google Chrome
+Wersja 111.0.5563.147 (Oficjalna wersja) (64-bitowa)
+
+============
+
+styl.css
+
+* {
+    font-family: 'Roboto', 'Serif';
+}
+
+header {
+    background-color: Crimson;
+    color: white;
+    text-align: center;
+    letter-spacing: 5px;
+    word-spacing: 30px;
+    padding: 10px;
+}
+
+#main1 {
+    background-color: MistyRose;
+    height: 300px;
+    padding: 10px;
+    margin: 10px 50px;
+    border: 1px solid Crimson;
+}
+
+#main1 img {
+    float: left;
+    height: 100%;
+}
+
+#main2 div,
+#main3 div {
+    background-color: Snow;
+    height: 450px;
+    width: 21%;
+    margin: 1%;
+    text-align: center;
+    border: 1px solid crimson;
+    float: left;
+}
+
+#main3 {
+    clear: both;
+}
+
+footer {
+    background-color: Crimson;
+    color: white;
+    clear: both;
+}
+
+img {
+    max-width: 100%;
+}
+
+h4 {
+    font-size: 180%;
+    text-align: center;
+    color: crimson;
+}
+
+a {
+    color: white;
+}
 
 ============
 

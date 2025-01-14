@@ -1,3 +1,41 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8" />
+	<title>Firma IT</title>
+	<link rel="stylesheet" href="styl.css" />
+	<link rel="icon" href="logo.png" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<section id="kontener">
+		<section id="logo">
+			<img src="logo.png" alt="logo firmy" />
+		</section>
+		<section id="menu">
+			<a href="index.html">Strona główna</a>
+			<a href="uslugi.html">Usługi</a>
+			<a href="kontakt.html">Kontakt</a>
+		</section>
+		<section id="baner">
+			<img src="animacja.gif" alt="Usługi informatyczne"/>
+		</section>
+		<section id="glowny">
+			<h2>Firma IT</h2>
+			<p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
+			<hr/>
+		</section>
+		<section id="stopka">
+			<p>Autor strony: <strong>PESEL</strong></p>
+		</section>
+	</section>
+</body>
+</html>
+
+============
+
 kontakt.html
 
 <!DOCTYPE html>
@@ -61,6 +99,23 @@ kontakt.html
 	</section>
 </body>
 </html>
+
+============
+
+main.js
+
+function formularz() {
+	let check = document.getElementById("check").checked;
+	if (check) {
+		let wynik = document.getElementById("wynik");
+		let imie = (document.getElementById("imie").value).toUpperCase();
+		let nazwisko = (document.getElementById("nazwisko").value).toUpperCase();
+		let usluga = document.getElementById("zgloszenie").value;
+		wynik.innerHTML = "<span style='color: navy'>" + imie + " " + nazwisko + "<br/>" + "Treść Twojej sprawy: " + usluga + "</span>";
+	} else {
+		wynik.innerHTML = "<span style='color: red;'>Musisz zapoznać się z regulaminem</span>";
+	}
+}
 
 ============
 
@@ -165,61 +220,6 @@ uslugi.html
 	</section>
 </body>
 </html>
-
-============
-
-index.html
-
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-	<meta charset="UTF-8" />
-	<title>Firma IT</title>
-	<link rel="stylesheet" href="styl.css" />
-	<link rel="icon" href="logo.png" />
-	<script src="main.js"></script>
-</head>
-<body>
-	<section id="kontener">
-		<section id="logo">
-			<img src="logo.png" alt="logo firmy" />
-		</section>
-		<section id="menu">
-			<a href="index.html">Strona główna</a>
-			<a href="uslugi.html">Usługi</a>
-			<a href="kontakt.html">Kontakt</a>
-		</section>
-		<section id="baner">
-			<img src="animacja.gif" alt="Usługi informatyczne"/>
-		</section>
-		<section id="glowny">
-			<h2>Firma IT</h2>
-			<p>Jesteśmy firmą z wieloletnim doświadczeniem w zakresie IT.</p>
-			<hr/>
-		</section>
-		<section id="stopka">
-			<p>Autor strony: <strong>PESEL</strong></p>
-		</section>
-	</section>
-</body>
-</html>
-
-============
-
-main.js
-
-function formularz() {
-	let check = document.getElementById("check").checked;
-	if (check) {
-		let wynik = document.getElementById("wynik");
-		let imie = (document.getElementById("imie").value).toUpperCase();
-		let nazwisko = (document.getElementById("nazwisko").value).toUpperCase();
-		let usluga = document.getElementById("zgloszenie").value;
-		wynik.innerHTML = "<span style='color: navy'>" + imie + " " + nazwisko + "<br/>" + "Treść Twojej sprawy: " + usluga + "</span>";
-	} else {
-		wynik.innerHTML = "<span style='color: red;'>Musisz zapoznać się z regulaminem</span>";
-	}
-}
 
 ============
 

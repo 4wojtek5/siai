@@ -1,3 +1,144 @@
+kwerendy.txt
+
+Zapytanie 1: SELECT imie, nazwisko FROM osoby WHERE dataUr >="2001-01-01";
+Zapytanie 2: SELECT DISTINCT miasto FROM `adresy` ORDER BY miasto; 
+Zapytanie 3: SELECT imie, nazwisko, telefony.numer FROM osoby JOIN telefony ON osoby.id = telefony.Osoby_id;
+Zapytanie 4: ALTER TABLE adresy ADD COLUMN numerMieszkania INT AFTER numer;
+
+============
+
+rejestracja.html
+
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sklep - rejestracja</title>
+        <link rel="stylesheet" href="styl.css">
+    </head>
+    <body>
+        <div id="boczny">
+            <img src="obraz.png" alt="promocje">
+            <h2>Sprawdź promocje</h2>
+            <table>
+                <tr>
+                    <th>co?</th>
+                    <th>ile taniej?</th>
+                </tr>
+                <tr>
+                    <td>ubrania</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>buty</td>
+                    <td>25%</td>
+                </tr>
+            </table>
+        </div>
+
+        <header>
+            <h1>Zarejestruj się w sklepie</h1>
+        </header>
+
+        <main>
+            <button onclick="klient()">Klient</button>
+            <button onclick="adres()">Adres</button>
+            <button onclick="kontakt()">Kontakt</button>
+
+            <div id="main1">
+                <p>Imię</p>
+                <input type="text" name="imie" id="imie" placeholder="Wpisz dane...">
+                <p>Nazwisko</p>
+                <input type="text" name="nazwisko" id="nazwisko">
+                <p>Data urodzenia</p>
+                <input type="date" name="data" id="data">
+            </div>
+
+            <div id="main2" style="display: none;">
+                <p>Ulica</p>
+                <input type="text" name="ulica" id="ulica">
+                <p>Numer</p>
+                <input type="number" name="numer" id="numer">
+                <p>Miasto</p>
+                <input type="text" name="miasto" id="miasto">
+            </div>
+
+            <div id="main3" style="display: none;">
+                <p>Numer komórkowy</p>
+                <input type="tel" name="tel" id="tel"><br>
+                <input type="checkbox" name="rodo" id="rodo"> <label for="rodo">Akceptuję RODO</label><br>
+                <button onclick="zatwierdz()">Zatwiedź dane</button>
+            </div>
+        </main>
+
+        <div id="postep">
+            <div></div>
+        </div>
+
+        <footer>
+            <h4>Rejestrację do sklepu wykonał: <a href="https://ee-informatyk.pl/" target="_blank" style="text-decoration: none;color: unset;">EE-Informatyk.pl</a></h4>
+        </footer>
+
+        <script src="skrypt.js"></script>
+    </body>
+</html>
+
+============
+
+skrypt.js
+
+function aktywujZakladke(zakladkaId) {
+    document.getElementById('main1').style.display = 'none';
+    document.getElementById('main2').style.display = 'none';
+    document.getElementById('main3').style.display = 'none';
+
+    document.getElementById(zakladkaId).style.display = 'block';
+}
+
+function klient() {
+    aktywujZakladke('main1');
+}
+
+function adres() {
+    aktywujZakladke('main2');
+}
+
+function kontakt() {
+    aktywujZakladke('main3');
+}
+
+let postepWartosc = 0;
+
+function aktualizujPostep() {
+    if (postepWartosc < 100) {
+        postepWartosc += 12;
+        if (postepWartosc > 100) {
+            postepWartosc = 100;
+        }
+        document.querySelector('#postep > div').style.width = postepWartosc + '%';
+    }
+}
+
+document.querySelectorAll('input[type="text"], input[type="date"], input[type="number"], input[type="tel"]').forEach(function (input) {
+    input.addEventListener('blur', aktualizujPostep);
+});
+
+function zatwierdz() {
+    let imie = document.getElementById('imie').value;
+    let nazwisko = document.getElementById('nazwisko').value;
+    let data = document.getElementById('data').value;
+    let ulica = document.getElementById('ulica').value;
+    let numer = document.getElementById('numer').value;
+    let miasto = document.getElementById('miasto').value;
+    let tel = document.getElementById('tel').value;
+    let rodo = document.getElementById('rodo').checked ? 'On' : 'Of';
+    console.log(imie + ", " + nazwisko + ", " + data + ", " + ulica + ", " + numer + ", " + miasto + ", " + tel + ", " + rodo);
+}
+
+
+============
+
 styl.css
 
 * {
@@ -81,138 +222,6 @@ main,
 footer {
     clear: both;
 }
-
-============
-
-skrypt.js
-
-function aktywujZakladke(zakladkaId) {
-    document.getElementById('main1').style.display = 'none';
-    document.getElementById('main2').style.display = 'none';
-    document.getElementById('main3').style.display = 'none';
-
-    document.getElementById(zakladkaId).style.display = 'block';
-}
-
-function klient() {
-    aktywujZakladke('main1');
-}
-
-function adres() {
-    aktywujZakladke('main2');
-}
-
-function kontakt() {
-    aktywujZakladke('main3');
-}
-
-let postepWartosc = 0;
-
-function aktualizujPostep() {
-    if (postepWartosc < 100) {
-        postepWartosc += 12;
-        if (postepWartosc > 100) {
-            postepWartosc = 100;
-        }
-        document.querySelector('#postep > div').style.width = postepWartosc + '%';
-    }
-}
-
-document.querySelectorAll('input[type="text"], input[type="date"], input[type="number"], input[type="tel"]').forEach(function (input) {
-    input.addEventListener('blur', aktualizujPostep);
-});
-
-function zatwierdz() {
-    let imie = document.getElementById('imie').value;
-    let nazwisko = document.getElementById('nazwisko').value;
-    let data = document.getElementById('data').value;
-    let ulica = document.getElementById('ulica').value;
-    let numer = document.getElementById('numer').value;
-    let miasto = document.getElementById('miasto').value;
-    let tel = document.getElementById('tel').value;
-    let rodo = document.getElementById('rodo').checked ? 'On' : 'Of';
-    console.log(imie + ", " + nazwisko + ", " + data + ", " + ulica + ", " + numer + ", " + miasto + ", " + tel + ", " + rodo);
-}
-
-
-============
-
-rejestracja.html
-
-<!DOCTYPE html>
-<html lang="pl">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sklep - rejestracja</title>
-        <link rel="stylesheet" href="styl.css">
-    </head>
-    <body>
-        <div id="boczny">
-            <img src="obraz.png" alt="promocje">
-            <h2>Sprawdź promocje</h2>
-            <table>
-                <tr>
-                    <th>co?</th>
-                    <th>ile taniej?</th>
-                </tr>
-                <tr>
-                    <td>ubrania</td>
-                    <td>15%</td>
-                </tr>
-                <tr>
-                    <td>buty</td>
-                    <td>25%</td>
-                </tr>
-            </table>
-        </div>
-
-        <header>
-            <h1>Zarejestruj się w sklepie</h1>
-        </header>
-
-        <main>
-            <button onclick="klient()">Klient</button>
-            <button onclick="adres()">Adres</button>
-            <button onclick="kontakt()">Kontakt</button>
-
-            <div id="main1">
-                <p>Imię</p>
-                <input type="text" name="imie" id="imie" placeholder="Wpisz dane...">
-                <p>Nazwisko</p>
-                <input type="text" name="nazwisko" id="nazwisko">
-                <p>Data urodzenia</p>
-                <input type="date" name="data" id="data">
-            </div>
-
-            <div id="main2" style="display: none;">
-                <p>Ulica</p>
-                <input type="text" name="ulica" id="ulica">
-                <p>Numer</p>
-                <input type="number" name="numer" id="numer">
-                <p>Miasto</p>
-                <input type="text" name="miasto" id="miasto">
-            </div>
-
-            <div id="main3" style="display: none;">
-                <p>Numer komórkowy</p>
-                <input type="tel" name="tel" id="tel"><br>
-                <input type="checkbox" name="rodo" id="rodo"> <label for="rodo">Akceptuję RODO</label><br>
-                <button onclick="zatwierdz()">Zatwiedź dane</button>
-            </div>
-        </main>
-
-        <div id="postep">
-            <div></div>
-        </div>
-
-        <footer>
-            <h4>Rejestrację do sklepu wykonał: <a href="https://ee-informatyk.pl/" target="_blank" style="text-decoration: none;color: unset;">EE-Informatyk.pl</a></h4>
-        </footer>
-
-        <script src="skrypt.js"></script>
-    </body>
-</html>
 
 ============
 

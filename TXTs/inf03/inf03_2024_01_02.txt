@@ -1,16 +1,3 @@
-main.js
-
-function formularz() {
-	let imie = document.getElementById("imie");
-	let nazwisko = document.getElementById("nazwisko");
-	let email = document.getElementById("email").value.toLowerCase();
-	let lista = document.getElementById("lista");
-	let wynik = document.getElementById("wynik");
-	wynik.innerHTML = imie.value + " " + nazwisko.value + "<br/>" + email + "<br/>" + "Usługa: " + lista.value;
-}
-
-============
-
 index.html
 
 <!DOCTPYE html>
@@ -54,66 +41,6 @@ index.html
 	</section>
 </body>
 </html>
-
-============
-
-styl.css
-
-body {
-	margin: 0;
-	background: #E0F7FA;
-	font-family: Arial;
-	text-align: center;
-}
-
-#kontener {
-	width: 95%;
-	margin: auto;
-}
-
-#baner {
-	background: #00838F;
-	height: 200px;
-}
-
-#menu {
-	background: #006064;
-	padding: 15px;
-}
-
-#menu a {
-	color: white;
-	text-decoration: none;
-	font-size: 150%;
-}
-
-#glowny1,
-#glowny2,
-#glowny3 {
-	height: 350px;
-	width: 33%;
-	float: left;
-}
-
-#stopka {
-	background: #006064;
-	color: white;
-	text-align: right;
-	padding: 10px;
-	clear: both;
-}
-
-ul {
-	text-align: left;
-}
-
-button {
-	background: #00838F;
-	color: white;
-}
-button:hover {
-	color: #80DEEA;
-}
 
 ============
 
@@ -186,6 +113,79 @@ kontakt.html
 </body>
 </html>
 
+
+============
+
+main.js
+
+function formularz() {
+	let imie = document.getElementById("imie");
+	let nazwisko = document.getElementById("nazwisko");
+	let email = document.getElementById("email").value.toLowerCase();
+	let lista = document.getElementById("lista");
+	let wynik = document.getElementById("wynik");
+	wynik.innerHTML = imie.value + " " + nazwisko.value + "<br/>" + email + "<br/>" + "Usługa: " + lista.value;
+}
+
+============
+
+styl.css
+
+body {
+	margin: 0;
+	background: #E0F7FA;
+	font-family: Arial;
+	text-align: center;
+}
+
+#kontener {
+	width: 95%;
+	margin: auto;
+}
+
+#baner {
+	background: #00838F;
+	height: 200px;
+}
+
+#menu {
+	background: #006064;
+	padding: 15px;
+}
+
+#menu a {
+	color: white;
+	text-decoration: none;
+	font-size: 150%;
+}
+
+#glowny1,
+#glowny2,
+#glowny3 {
+	height: 350px;
+	width: 33%;
+	float: left;
+}
+
+#stopka {
+	background: #006064;
+	color: white;
+	text-align: right;
+	padding: 10px;
+	clear: both;
+}
+
+ul {
+	text-align: left;
+}
+
+button {
+	background: #00838F;
+	color: white;
+}
+button:hover {
+	color: #80DEEA;
+}
 
 ============
 

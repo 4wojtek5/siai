@@ -1,65 +1,3 @@
-skrypt.js
-
-const odpowiedzi = [
-    "Świetnie!",
-    "Kto gra główną rolę?",
-    "Lubisz filmy Tego reżysera?",
-    "Będę 10 minut wcześniej",
-    "Może kupimy sobie popcorn?",
-    "Ja wolę Colę",
-    "Zaproszę jeszcze Grześka",
-    "Tydzień temu też byłem w kinie na Diunie",
-    "Ja funduję bilety"
-];
-
-function wyslij() {
-    const messageInput = document.getElementById('wiadomosc');
-    const chat = document.getElementById('chat');
-
-    const jolkaDiv = document.createElement('div');
-    jolkaDiv.classList.add('jolka');
-
-    const jolkaImg = document.createElement('img');
-    jolkaImg.src = 'Jolka.jpg';
-    jolkaImg.alt = 'Jolanta Nowak';
-
-    const jolkaP = document.createElement('p');
-    jolkaP.textContent = messageInput.value;
-
-    jolkaDiv.appendChild(jolkaImg);
-    jolkaDiv.appendChild(jolkaP);
-    chat.appendChild(jolkaDiv);
-
-    chat.scrollTop = chat.scrollHeight;
-
-    messageInput.value = '';
-}
-
-function generuj() {
-    const randomIndex = Math.floor(Math.random() * odpowiedzi.length);
-    const randomResponse = odpowiedzi[randomIndex];
-    const chat = document.getElementById('chat');
-
-    const krzysiekDiv = document.createElement('div');
-    krzysiekDiv.classList.add('krzysiek');
-
-    const krzysiekImg = document.createElement('img');
-    krzysiekImg.src = 'Krzysiek.jpg';
-    krzysiekImg.alt = 'Krzysztof Łukasiński';
-
-    const krzysiekP = document.createElement('p');
-    krzysiekP.textContent = randomResponse;
-
-    krzysiekDiv.appendChild(krzysiekImg);
-    krzysiekDiv.appendChild(krzysiekP);
-    chat.appendChild(krzysiekDiv);
-
-    chat.scrollTop = chat.scrollHeight;
-}
-
-
-============
-
 chat.html
 
 <!DOCTYPE html>
@@ -119,6 +57,85 @@ chat.html
         </footer>
     </body>
 </html>
+
+============
+
+kwerendy.txt
+
+Zapytanie 1: INSERT INTO `logowanie`(`id`, `nick`, `haslo`) VALUES (3, 'Jeremi','Jer123'); 
+Zapytanie 2: SELECT FLOOR(AVG(rokUr)) AS "Średni rok urodzenia" FROM uczestnicy;
+Zapytanie 3: SELECT imie, nazwisko, nick, haslo FROM uczestnicy JOIN logowanie ON logowanie_id = logowanie.id WHERE imie LIKE "J%";
+Zapytanie 4: CREATE USER uczestnik@localhost IDENTIFIED BY "Ucz123&";
+Zapytanie 5: GRANT SELECT, UPDATE ON chat.uczestnicy TO uczestnik@localhost;
+
+============
+
+przegladarka.txt
+
+Google Chrome
+Wersja 111.0.5563.147 (Oficjalna wersja) (64-bitowa)
+
+============
+
+skrypt.js
+
+const odpowiedzi = [
+    "Świetnie!",
+    "Kto gra główną rolę?",
+    "Lubisz filmy Tego reżysera?",
+    "Będę 10 minut wcześniej",
+    "Może kupimy sobie popcorn?",
+    "Ja wolę Colę",
+    "Zaproszę jeszcze Grześka",
+    "Tydzień temu też byłem w kinie na Diunie",
+    "Ja funduję bilety"
+];
+
+function wyslij() {
+    const messageInput = document.getElementById('wiadomosc');
+    const chat = document.getElementById('chat');
+
+    const jolkaDiv = document.createElement('div');
+    jolkaDiv.classList.add('jolka');
+
+    const jolkaImg = document.createElement('img');
+    jolkaImg.src = 'Jolka.jpg';
+    jolkaImg.alt = 'Jolanta Nowak';
+
+    const jolkaP = document.createElement('p');
+    jolkaP.textContent = messageInput.value;
+
+    jolkaDiv.appendChild(jolkaImg);
+    jolkaDiv.appendChild(jolkaP);
+    chat.appendChild(jolkaDiv);
+
+    chat.scrollTop = chat.scrollHeight;
+
+    messageInput.value = '';
+}
+
+function generuj() {
+    const randomIndex = Math.floor(Math.random() * odpowiedzi.length);
+    const randomResponse = odpowiedzi[randomIndex];
+    const chat = document.getElementById('chat');
+
+    const krzysiekDiv = document.createElement('div');
+    krzysiekDiv.classList.add('krzysiek');
+
+    const krzysiekImg = document.createElement('img');
+    krzysiekImg.src = 'Krzysiek.jpg';
+    krzysiekImg.alt = 'Krzysztof Łukasiński';
+
+    const krzysiekP = document.createElement('p');
+    krzysiekP.textContent = randomResponse;
+
+    krzysiekDiv.appendChild(krzysiekImg);
+    krzysiekDiv.appendChild(krzysiekP);
+    chat.appendChild(krzysiekDiv);
+
+    chat.scrollTop = chat.scrollHeight;
+}
+
 
 ============
 
@@ -205,6 +222,20 @@ button {
 input {
     width: 500px;
 }
+
+============
+
+tekstyDoChatu.txt
+
+"Świetnie!",
+"Kto gra główną rolę?",
+"Lubisz filmy Tego reżysera?",
+"Będę 10 minut wcześniej",
+"Może kupimy sobie popcorn?",
+"Ja wolę Colę",
+"Zaproszę jeszcze Grześka",
+"Tydzień temu też byłem w kinie na Diunie",
+"Ja funduję bilety"
 
 ============
 

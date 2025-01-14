@@ -1,4 +1,4 @@
-twarz.html
+index.html
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -15,37 +15,23 @@ twarz.html
         <h2>Nasza oferta</h2>
         <ol>
             <li><a href="twarz.html">Oczyszczanie twarzy</a>
-                <ol>
+                <ul>
                     <li>Peeling</li>
                     <li>Maska</li>
-                </ol>
+                </ul>
             </li>
             <li>Masaż</li>
             <li>Makijaż</li>
         </ol>
-        <a href="index.html">Strona głowna</a>
+        <a id="do_glownej" href="index.html">Strona głowna</a>
     </section>
     <section id="prawy1">
         <h1>Usługi kosmetyczne</h1>
     </section>
     <section id="prawy2">
-        <h3>Kalkulator ceny wizyty</h3>
-        <form>
-            <label>Peeling
-                <input type="checkbox" id="peeling"><br />
-            </label>
-            <label>Maska
-                <input type="checkbox" id="maska"><br />
-            </label>
-            <label>Masaż
-                <input type="checkbox" id="masaz"><br />
-            </label>
-            <label>Makijaż
-                <input type="checkbox" id="makijaz"><br />
-            </label>
-            <button type="button" onclick="oblicz()">Oblicz cenę</button>
-        </form>
-        <p id="wynik"></p>
+        <p>Witaj! Miło nam, że odwiedziłeś nasz salon. zapoznaj się z ofertą lub skontaktuj się z nami.</p>
+        <img src="obraz2.jpg" alt="Zrelaksuj się">
+        <h3>Telefon: 111 222 333</h3>
     </section>
     <section id="lewy2">
         <img src="obraz1.jpg" alt="Personel">
@@ -57,6 +43,33 @@ twarz.html
 </body>
 
 </html>
+
+============
+
+kwerendy.txt
+
+1. SELECT nazwa, cena FROM uslugi WHERE cena >= 50;
+2. SELECT AVG(cena), COUNT(uslugi.id) FROM uslugi WHERE uslugi.rodzaj = 1 GROUP BY uslugi.rodzaj;
+3. CREATE USER 'kosmetyczka'@'localhost' IDENTIFIED BY 'Kosmet34';
+4. GRANT SELECT, UPDATE ON salon.uslugi TO 'kosmetyczka'@'localhost';
+
+============
+
+main.js
+
+function oblicz() {
+    let wynik = document.getElementById("wynik")
+    let peeling = document.getElementById("peeling").checked
+    let maska = document.getElementById("maska").checked
+    let masaz = document.getElementById("masaz").checked
+    let makijaz = document.getElementById("makijaz").checked
+    let cena = 0
+    if (peeling) cena += 45
+    if (maska) cena += 30
+    if (masaz) cena += 20
+    if (makijaz) cena += 50
+    wynik.innerHTML = "Cena zabiegów: " + cena
+}
 
 ============
 
@@ -139,7 +152,7 @@ img:hover {
 
 ============
 
-index.html
+twarz.html
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -156,23 +169,37 @@ index.html
         <h2>Nasza oferta</h2>
         <ol>
             <li><a href="twarz.html">Oczyszczanie twarzy</a>
-                <ul>
+                <ol>
                     <li>Peeling</li>
                     <li>Maska</li>
-                </ul>
+                </ol>
             </li>
             <li>Masaż</li>
             <li>Makijaż</li>
         </ol>
-        <a id="do_glownej" href="index.html">Strona głowna</a>
+        <a href="index.html">Strona głowna</a>
     </section>
     <section id="prawy1">
         <h1>Usługi kosmetyczne</h1>
     </section>
     <section id="prawy2">
-        <p>Witaj! Miło nam, że odwiedziłeś nasz salon. zapoznaj się z ofertą lub skontaktuj się z nami.</p>
-        <img src="obraz2.jpg" alt="Zrelaksuj się">
-        <h3>Telefon: 111 222 333</h3>
+        <h3>Kalkulator ceny wizyty</h3>
+        <form>
+            <label>Peeling
+                <input type="checkbox" id="peeling"><br />
+            </label>
+            <label>Maska
+                <input type="checkbox" id="maska"><br />
+            </label>
+            <label>Masaż
+                <input type="checkbox" id="masaz"><br />
+            </label>
+            <label>Makijaż
+                <input type="checkbox" id="makijaz"><br />
+            </label>
+            <button type="button" onclick="oblicz()">Oblicz cenę</button>
+        </form>
+        <p id="wynik"></p>
     </section>
     <section id="lewy2">
         <img src="obraz1.jpg" alt="Personel">
@@ -184,24 +211,6 @@ index.html
 </body>
 
 </html>
-
-============
-
-main.js
-
-function oblicz() {
-    let wynik = document.getElementById("wynik")
-    let peeling = document.getElementById("peeling").checked
-    let maska = document.getElementById("maska").checked
-    let masaz = document.getElementById("masaz").checked
-    let makijaz = document.getElementById("makijaz").checked
-    let cena = 0
-    if (peeling) cena += 45
-    if (maska) cena += 30
-    if (masaz) cena += 20
-    if (makijaz) cena += 50
-    wynik.innerHTML = "Cena zabiegów: " + cena
-}
 
 ============
 

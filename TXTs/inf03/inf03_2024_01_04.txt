@@ -1,3 +1,71 @@
+index.php
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadania na lipiec</title>
+    <link rel="stylesheet" href="styl6.css">
+</head>
+
+<body>
+    <header>
+        <section id="header1">
+            <img src="logo1.png" alt="lipiec">
+        </section>
+        <section id="header2">
+            <h1>TERMINARZ</h1>
+            <p>najbliższe zadania:
+                <?php
+                $con = mysqli_connect('localhost', 'root', '', 'terminarz');
+                $q = "SELECT DISTINCT wpis FROM zadania WHERE dataZadania BETWEEN '2020-07-01' AND '2020-07-07' AND wpis != '';";
+                $res = mysqli_query($con, $q);
+                while ($row = mysqli_fetch_array($res)) {
+                    echo "$row[0]; ";
+                }
+                ?>
+            </p>
+        </section>
+    </header>
+    <main>
+        <?php
+        $q = "SELECT dataZadania, wpis FROM zadania WHERE MONTH(dataZadania) = 7;";
+        $res = mysqli_query($con, $q);
+        while ($row = mysqli_fetch_array($res)) {
+            echo "<section class='kalendarz'>
+                <h6>$row[0]</h6>
+                <p>$row[1]</p>
+                </section>";
+        }
+        mysqli_close($con);
+        ?>
+    </main>
+    <footer>
+        <a href="sierpien.html">Terminarz na sierpień</a>
+        <p>Stronę wykonał: Chriskyy</p>
+    </footer>
+</body>
+
+</html>
+
+============
+
+kwerendy.txt
+
+1. SELECT DISTINCT wpis FROM zadania WHERE dataZadania BETWEEN '2020-07-01' AND '2020-07-07' AND wpis != '';
+2. SELECT dataZadania, wpis FROM zadania WHERE MONTH(dataZadania) = 7;
+3. SELECT miesiac, wpis FROM zadania WHERE wpis LIKE 'S%';
+4. UPDATE zadania SET wpis = 'Wycieczka nad morze' WHERE dataZadania = '2020-07-18';
+
+============
+
+sierpien.html
+
+strona w trakcie budowy
+
+============
+
 styl6.css
 
 * {
@@ -53,65 +121,6 @@ footer {
 h6 {
     text-align: center;
 }
-
-============
-
-sierpien.html
-
-strona w trakcie budowy
-
-============
-
-index.php
-
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Zadania na lipiec</title>
-    <link rel="stylesheet" href="styl6.css">
-</head>
-
-<body>
-    <header>
-        <section id="header1">
-            <img src="logo1.png" alt="lipiec">
-        </section>
-        <section id="header2">
-            <h1>TERMINARZ</h1>
-            <p>najbliższe zadania:
-                <?php
-                $con = mysqli_connect('localhost', 'root', '', 'terminarz');
-                $q = "SELECT DISTINCT wpis FROM zadania WHERE dataZadania BETWEEN '2020-07-01' AND '2020-07-07' AND wpis != '';";
-                $res = mysqli_query($con, $q);
-                while ($row = mysqli_fetch_array($res)) {
-                    echo "$row[0]; ";
-                }
-                ?>
-            </p>
-        </section>
-    </header>
-    <main>
-        <?php
-        $q = "SELECT dataZadania, wpis FROM zadania WHERE MONTH(dataZadania) = 7;";
-        $res = mysqli_query($con, $q);
-        while ($row = mysqli_fetch_array($res)) {
-            echo "<section class='kalendarz'>
-                <h6>$row[0]</h6>
-                <p>$row[1]</p>
-                </section>";
-        }
-        mysqli_close($con);
-        ?>
-    </main>
-    <footer>
-        <a href="sierpien.html">Terminarz na sierpień</a>
-        <p>Stronę wykonał: Chriskyy</p>
-    </footer>
-</body>
-
-</html>
 
 ============
 

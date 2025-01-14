@@ -1,3 +1,12 @@
+kwerendy.txt
+
+1. INSERT INTO rezerwacje VALUES (NULL, 1'2017-07-04', 4, '111222333');
+2. SELECT nazwa, cena FROM dania WHERE typ = 2;
+3. SELECT nazwa FROM dania WHERE typ = 3 AND CENA < 15;
+4. UPDATE pracownicy SET stanowisko = 4 WHERE stanowisko = 3;
+
+============
+
 restauracja.html
 
 <!DOCTYPE html>
@@ -55,6 +64,23 @@ restauracja.html
 
 ============
 
+rezerwacja.php
+
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'baza');
+if(isset($_POST['rezerwuj'])) {
+	$data = $_POST['data'];
+	$ilosc = $_POST['ilosc'];
+	$telefon = $_POST['telefon'];
+	$kw = "INSERT INTO rezerwacje VALUES (NULL, NULL, '$data', $ilosc, '$telefon');";
+	mysqli_query($con, $kw);
+	echo "Dodano rezerwcje do bazy";
+}
+mysqli_close($con);
+?>
+
+============
+
 styl_1.css
 
 body {
@@ -100,23 +126,6 @@ button {
 h1 {
 	margin: 0;
 }
-
-============
-
-rezerwacja.php
-
-<?php
-$con = mysqli_connect('localhost', 'root', '', 'baza');
-if(isset($_POST['rezerwuj'])) {
-	$data = $_POST['data'];
-	$ilosc = $_POST['ilosc'];
-	$telefon = $_POST['telefon'];
-	$kw = "INSERT INTO rezerwacje VALUES (NULL, NULL, '$data', $ilosc, '$telefon');";
-	mysqli_query($con, $kw);
-	echo "Dodano rezerwcje do bazy";
-}
-mysqli_close($con);
-?>
 
 ============
 
