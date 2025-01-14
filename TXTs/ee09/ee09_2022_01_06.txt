@@ -1,54 +1,3 @@
-styl6.css
-
-body {
-	margin: 0;
-	font-family: Georgia;
-}
-#lewy {
-	background: Maroon;
-	color: white;
-	height: 600px;
-	width: 30%;
-	float: left;
-}
-#prawy {
-	background: Maroon;
-	color: white;
-	height: 600px;
-	width: 70%;
-	overflow: scroll;
-	float: left;
-}
-#stopka {
-	background: DimGray;
-	color: white;
-	clear: both;
-}
-#prawy img, ul{
-	float: left;
-}
-#prawy p {
-	clear: both;
-}
-p {
-	padding: 10px;
-}
-img {
-	padding: 10px;
-	border: 1px solid white;
-}
-#indigo {
-	background: Indigo
-}
-#steelblue {
-	background: SteelBlue;
-}
-#olive {
-	background: Olive;
-}
-
-============
-
 konfigurator.html
 
 <!DOCTYPE html>
@@ -111,6 +60,15 @@ konfigurator.html
 
 ============
 
+kwerendy.txt
+
+1. CREATE USER 'Agnieszka' IDENTIFIED BY 'haslo4';
+2. SELECT AVG(rocznik) FROM samochody WHERE marka = 'opel';
+3. SELECT samochody.marka, klienci.imie FROM samochody, klienci, wypozyczenia WHERE wypozyczenia.klienci_id = klienci.id AND samochody.id = wypozyczenia.samochody_id;
+4. ALTER TABLE klasa DROP COLUMN cena;
+
+============
+
 main.js
 
 function kolorBg(kolor) {
@@ -137,6 +95,57 @@ function ramka() {
 function punktor(typ) {
 	let lista = document.getElementById("lista");
 	lista.style.listStyleType = typ;
+}
+
+============
+
+styl6.css
+
+body {
+	margin: 0;
+	font-family: Georgia;
+}
+#lewy {
+	background: Maroon;
+	color: white;
+	height: 600px;
+	width: 30%;
+	float: left;
+}
+#prawy {
+	background: Maroon;
+	color: white;
+	height: 600px;
+	width: 70%;
+	overflow: scroll;
+	float: left;
+}
+#stopka {
+	background: DimGray;
+	color: white;
+	clear: both;
+}
+#prawy img, ul{
+	float: left;
+}
+#prawy p {
+	clear: both;
+}
+p {
+	padding: 10px;
+}
+img {
+	padding: 10px;
+	border: 1px solid white;
+}
+#indigo {
+	background: Indigo
+}
+#steelblue {
+	background: SteelBlue;
+}
+#olive {
+	background: Olive;
 }
 
 ============

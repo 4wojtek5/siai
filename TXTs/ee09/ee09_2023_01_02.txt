@@ -55,6 +55,49 @@ galeria.html
 
 ============
 
+kwerendy.txt
+
+1. SELECT nazwa, pasmo FROM szczyty WHERE wysokosc > 1500
+2. SEKECT nazwa FROM szczyty ORDER BY wysokosc DESC LIMIT 1
+3. CREATE USER 'leon'@'localhost' IDENTIFIED BY 'Leon%Zawodowiec'
+4. GRANT SELECT, INSERT, UPDATE, DELETE ON gory.* TO 'leon'@'localhost';
+
+============
+
+main.js
+
+let nr = 1
+function zamiana(src, numer) {
+    let glowne = document.getElementById('glowne')
+    glowne.src = src
+    nr = numer
+
+}
+
+function prev() {
+    let aktualne = document.getElementById('glowne')
+    nr--
+    if (nr == 0) nr = 5
+    if (nr == 1) aktualne.src = '1.jpg'
+    if (nr == 2) aktualne.src = '2.jpg'
+    if (nr == 3) aktualne.src = '3.jpg'
+    if (nr == 4) aktualne.src = '4.jpg'
+    if (nr == 5) aktualne.src = '5.jpg'
+}
+
+function next() {
+    let aktualne = document.getElementById('glowne')
+    nr++
+    if (nr == 6) nr = 1
+    if (nr == 1) aktualne.src = '1.jpg'
+    if (nr == 2) aktualne.src = '2.jpg'
+    if (nr == 3) aktualne.src = '3.jpg'
+    if (nr == 4) aktualne.src = '4.jpg'
+    if (nr == 5) aktualne.src = '5.jpg'
+}
+
+============
+
 styl2.css
 
 body {
@@ -104,40 +147,6 @@ img[alt="miniatura"]:hover {
 table {
     border: 1px dashed black;
     width: 100%;
-}
-
-============
-
-main.js
-
-let nr = 1
-function zamiana(src, numer) {
-    let glowne = document.getElementById('glowne')
-    glowne.src = src
-    nr = numer
-
-}
-
-function prev() {
-    let aktualne = document.getElementById('glowne')
-    nr--
-    if (nr == 0) nr = 5
-    if (nr == 1) aktualne.src = '1.jpg'
-    if (nr == 2) aktualne.src = '2.jpg'
-    if (nr == 3) aktualne.src = '3.jpg'
-    if (nr == 4) aktualne.src = '4.jpg'
-    if (nr == 5) aktualne.src = '5.jpg'
-}
-
-function next() {
-    let aktualne = document.getElementById('glowne')
-    nr++
-    if (nr == 6) nr = 1
-    if (nr == 1) aktualne.src = '1.jpg'
-    if (nr == 2) aktualne.src = '2.jpg'
-    if (nr == 3) aktualne.src = '3.jpg'
-    if (nr == 4) aktualne.src = '4.jpg'
-    if (nr == 5) aktualne.src = '5.jpg'
 }
 
 ============

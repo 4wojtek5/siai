@@ -69,6 +69,33 @@ informacje.html
 
 ============
 
+kwerendy.txt
+
+1. SELECT id, tytul FROM ogloszenia ORDER BY tytul ASC;
+2. SELECT tytul FROM ogloszena WHERE kategoria = 1 AND podkategoria = 13;
+3. UPDATE ogloszenia SET podkategoria = 1 WHERE id = 5;
+4. ALTER TABLE ogloszenia DROP COLUMN uzytkownik_id;
+
+============
+
+main.js
+
+function pokaz(id) {
+    let artykul = document.getElementById(id)
+    let artykul_1 = document.getElementById('artykul_1')
+    let artykul_2 = document.getElementById('artykul_2')
+    let artykul_3 = document.getElementById('artykul_3')
+    let artykul_4 = document.getElementById('artykul_4')
+    artykul_1.style.display = 'none'
+    artykul_2.style.display = 'none'
+    artykul_3.style.display = 'none'
+    artykul_4.style.display = 'none'
+    artykul.style.display = 'block'
+
+}
+
+============
+
 styl3.css
 
 body {
@@ -130,24 +157,6 @@ table {
     margin: auto;
     width: 95%;
     border: 1px solid aliceblue;
-}
-
-============
-
-main.js
-
-function pokaz(id) {
-    let artykul = document.getElementById(id)
-    let artykul_1 = document.getElementById('artykul_1')
-    let artykul_2 = document.getElementById('artykul_2')
-    let artykul_3 = document.getElementById('artykul_3')
-    let artykul_4 = document.getElementById('artykul_4')
-    artykul_1.style.display = 'none'
-    artykul_2.style.display = 'none'
-    artykul_3.style.display = 'none'
-    artykul_4.style.display = 'none'
-    artykul.style.display = 'block'
-
 }
 
 ============

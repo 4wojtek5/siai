@@ -1,68 +1,18 @@
-gromada-ssaki.html
-
-Strona w trakcie budowy
-
-============
-
 gromada-ptaki.html
 
 Strona w trakcie budowy
 
 ============
 
-style12.css
+gromada-ryby.html
 
-body {
-	margin: 0;
-	font-family: Verdana;
-}
-#menu {
-	background: SandyBrown;
-	height: 120px;
-	width: 60%;
-	float: left;
-}
-#logo {
-	background: Sienna;
-	color: white;
-	text-align: center;
-	height: 120px;
-	width: 40%;
-	float: left;
-}
-#lewy {
-	background: Sienna;
-	color: white;
-	height: 700px;
-	width: 60%;
-	float: left;
-}
-#prawy {
-	background: SandyBrown;
-	height: 700px;
-	width: 40%;
-	float: left;
-}
-#stopka {
-	background: #4D1900;
-	color: white;
-	text-align: right;
-	clear: both;
-}
-#menu {
-	display: flex;
-	align-items: center;
-}
-#menu a {
-	background: green;
-	color: yellow;
-	padding: 20px 50px 20px 50px;
-	margin-right: 5px;
-}
-#menu a:hover {
-	background: yellow;
-	color: green;
-}
+Strona w trakcie budowy
+
+============
+
+gromada-ssaki.html
+
+Strona w trakcie budowy
 
 ============
 
@@ -120,9 +70,68 @@ gromady.php
 
 ============
 
-gromada-ryby.html
+kwerendy.txt
 
-Strona w trakcie budowy
+1. SELECT gatunek, obraz FROM zwierzeta WHERE Gromady_id = 4;
+2. SELECT id, Gromady_id, gatunek, wystepowanie FROM zwierzeta WHERE Gromady_id IN (4, 5);
+3. SELECT zwierzeta.gatunek, odzywianie.id, odzywianie.rodzaj FROM zwierzeta, odzywianie WHERE zwierzeta.Odzywianie_id = odzywianie.id;
+4. ALTER TABLE odzywianie DROP COLUMN informacja;
+
+============
+
+style12.css
+
+body {
+	margin: 0;
+	font-family: Verdana;
+}
+#menu {
+	background: SandyBrown;
+	height: 120px;
+	width: 60%;
+	float: left;
+}
+#logo {
+	background: Sienna;
+	color: white;
+	text-align: center;
+	height: 120px;
+	width: 40%;
+	float: left;
+}
+#lewy {
+	background: Sienna;
+	color: white;
+	height: 700px;
+	width: 60%;
+	float: left;
+}
+#prawy {
+	background: SandyBrown;
+	height: 700px;
+	width: 40%;
+	float: left;
+}
+#stopka {
+	background: #4D1900;
+	color: white;
+	text-align: right;
+	clear: both;
+}
+#menu {
+	display: flex;
+	align-items: center;
+}
+#menu a {
+	background: green;
+	color: yellow;
+	padding: 20px 50px 20px 50px;
+	margin-right: 5px;
+}
+#menu a:hover {
+	background: yellow;
+	color: green;
+}
 
 ============
 

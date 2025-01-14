@@ -16,6 +16,12 @@ function f() {
 
 ============
 
+Regulamin.txt
+
+Regulamin Domu Weselnego
+
+============
+
 styl5.css
 
 body {

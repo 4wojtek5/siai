@@ -1,3 +1,17 @@
+baza.txt
+
+1. CREATE TABLE pokoje (id INT UNSIGNED, nazwa VARCHAR(20), cena INT);
+2. ALTER TABLE pokoje ADD PRIMARY KEY(id);
+3. INSERT INTO pokoje VALUES (1, 'jednoosobowy', 100),(2, 'dwuosobowy', 170),(3, 'trzyosobowy', 210);
+4. ALTER TABLE rezerwacje ADD FOREIGN KEY(id_pok) REFERENCES pokoje(id);
+5. SELECT id_pok, SUM(liczba_dn) FROM rezerwacje GROUP BY id_pok;
+6. SELECT SUM(liczba_dn) FROM rezerwacje WHERE sezon = 'lato';
+7. UPDATE pokoje SET cena = cena * 1.15;
+8. CREATE USER 'najemca' IDENTIFIED BY 'n@JEM1@!';
+
+
+============
+
 cennik.php
 
 <!DOCTYPE html>
@@ -45,6 +59,98 @@ cennik.php
                 mysqli_close($con);
                 ?>
             </table>
+        </section>
+        <section id="panelPrawy">
+        </section>
+    </main>
+    <footer>
+        <p>Stronę opracował: Chriskyy#0181</p>
+    </footer>
+</body>
+
+</html>
+
+============
+
+index.html
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pokoje</title>
+    <link rel="stylesheet" href="./styl.css">
+</head>
+
+<body>
+    <header>
+        <h2>WYNAJEM POKOI</h2>
+    </header>
+    <nav>
+        <section id="menuOne">
+            <a href="./index.html">POKOJE</a>
+        </section>
+        <section id="menuTwo">
+            <a href="./cennik.php">CENNIK</a>
+        </section>
+        <section id="menuThree">
+            <a href="./kalkulator.html">KALKULATOR</a>
+        </section>
+    </nav>
+    <section id="bannerTwo"></section>
+    <main>
+        <section id="panelLewy">
+            <img src="./1.jpg" alt="Gdzie obrazek?">
+        </section>
+        <section id="panelSrodkowy">
+            <img src="./2.jpg" alt="Gdzie obrazek?">
+        </section>
+        <section id="panelPrawy">
+            <img src="./3.jpg" alt="Gdzie obrazek?">
+        </section>
+    </main>
+    <footer>
+        <p>Stronę opracował: Chriskyy#0181</p>
+    </footer>
+</body>
+
+</html>
+
+============
+
+kalkulator.html
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pokoje</title>
+    <link rel="stylesheet" href="./styl.css">
+</head>
+
+<body>
+    <header>
+        <h2>WYNAJEM POKOI</h2>
+    </header>
+    <nav>
+        <section id="menuOne">
+            <a href="./index.html">POKOJE</a>
+        </section>
+        <section id="menuTwo">
+            <a href="./cennik.php">CENNIK</a>
+        </section>
+        <section id="menuThree">
+            <a href="./kalkulator.html">KALKULATOR</a>
+        </section>
+    </nav>
+    <section id="bannerTwo"></section>
+    <main>
+        <section id="panelLewy">
+        </section>
+        <section id="panelSrodkowy">
+            strona w trakcie budowy
         </section>
         <section id="panelPrawy">
         </section>
@@ -139,98 +245,6 @@ td {
 p {
 	margin: 0;
 }
-
-============
-
-kalkulator.html
-
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Pokoje</title>
-    <link rel="stylesheet" href="./styl.css">
-</head>
-
-<body>
-    <header>
-        <h2>WYNAJEM POKOI</h2>
-    </header>
-    <nav>
-        <section id="menuOne">
-            <a href="./index.html">POKOJE</a>
-        </section>
-        <section id="menuTwo">
-            <a href="./cennik.php">CENNIK</a>
-        </section>
-        <section id="menuThree">
-            <a href="./kalkulator.html">KALKULATOR</a>
-        </section>
-    </nav>
-    <section id="bannerTwo"></section>
-    <main>
-        <section id="panelLewy">
-        </section>
-        <section id="panelSrodkowy">
-            strona w trakcie budowy
-        </section>
-        <section id="panelPrawy">
-        </section>
-    </main>
-    <footer>
-        <p>Stronę opracował: Chriskyy#0181</p>
-    </footer>
-</body>
-
-</html>
-
-============
-
-index.html
-
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Pokoje</title>
-    <link rel="stylesheet" href="./styl.css">
-</head>
-
-<body>
-    <header>
-        <h2>WYNAJEM POKOI</h2>
-    </header>
-    <nav>
-        <section id="menuOne">
-            <a href="./index.html">POKOJE</a>
-        </section>
-        <section id="menuTwo">
-            <a href="./cennik.php">CENNIK</a>
-        </section>
-        <section id="menuThree">
-            <a href="./kalkulator.html">KALKULATOR</a>
-        </section>
-    </nav>
-    <section id="bannerTwo"></section>
-    <main>
-        <section id="panelLewy">
-            <img src="./1.jpg" alt="Gdzie obrazek?">
-        </section>
-        <section id="panelSrodkowy">
-            <img src="./2.jpg" alt="Gdzie obrazek?">
-        </section>
-        <section id="panelPrawy">
-            <img src="./3.jpg" alt="Gdzie obrazek?">
-        </section>
-    </main>
-    <footer>
-        <p>Stronę opracował: Chriskyy#0181</p>
-    </footer>
-</body>
-
-</html>
 
 ============
 

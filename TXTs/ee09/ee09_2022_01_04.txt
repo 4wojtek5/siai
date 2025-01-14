@@ -1,3 +1,12 @@
+kwerendy.txt
+
+1. CREATE TABLE uzytkownicy (id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY, login TEXT(50), haslo TEXT(50));
+2. INSERT INTO uzytkownicy VALUES (NULL, 'Grzegorz', 'g');
+3. SELECT login FROM uzytkownicy;
+4. SELECT id, login FROM uzytkownicy WHERE haslo LIKE '4%';
+
+============
+
 logowanie.php
 
 <!DOCTYPE html>
@@ -89,6 +98,12 @@ logowanie.php
 
 ============
 
+regulamin.html
+
+regulamin
+
+============
+
 styl4.css
 
 body {
@@ -134,12 +149,6 @@ p::before {
 h1 {
 	margin: 0;
 }
-
-============
-
-regulamin.html
-
-regulamin
 
 ============
 

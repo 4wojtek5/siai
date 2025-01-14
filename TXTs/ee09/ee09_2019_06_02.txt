@@ -1,3 +1,26 @@
+kwerendy.txt
+
+1. SELECT marka, model FROM samochody WHERE kolor = 'czerwony';
+2. UPDATE samochody SET stan = 'dobry' WHERE rocznik = 2003;
+3. CREATE USER 'andrzej'@'localhost' IDENTIFIED BY 'andrzej1@';
+4. GRANT SELECT, UPDATE ON samochody.* TO 'andrzej'@'localhost';
+
+============
+
+main.js
+
+function oblicz() {
+	let paliwo = document.getElementById("paliwo").value;
+	let ilosc = document.getElementById("ilosc").value;
+	let wynik = document.getElementById("wynik");
+	let cena = 0;
+	if(paliwo == 1) cena = 4;
+	if(paliwo == 2) cena = 3.5;
+	wynik.innerHTML = "koszt paliwa: " + cena * ilosc + " zł";
+}
+
+============
+
 obliczenia.html
 
 <!DOCTYPE html>
@@ -40,47 +63,6 @@ obliczenia.html
 	</div>
 </body>
 </html>
-
-============
-
-styl3.css
-
-body {
-	margin: 0;
-	font-family: Helvetica;
-}
-#banerLewy,
-#lewy {
-	background: rgb(130, 69, 85);
-	color: white;
-	width: 30%;
-	height: 200px;
-	text-align: center;
-	float: left;
-}
-#banerPrawy,
-#prawy {
-	background: rgb(130, 69, 85);
-	color: white;
-	width: 70%;
-	height: 200px;
-	text-align: center;
-	float: left;
-}
-#glowny,
-#stopka {
-	background: rgb(240, 234, 226);
-	padding: 120px;
-}
-table,
-td {
-	border: 1px solid rgb(130, 69, 85);
-	color: rgb(130, 69, 85);
-	padding: 10px;
-}
-a {
-	color: rgb(240, 234, 226);
-}
 
 ============
 
@@ -135,16 +117,43 @@ stacja.html
 
 ============
 
-main.js
+styl3.css
 
-function oblicz() {
-	let paliwo = document.getElementById("paliwo").value;
-	let ilosc = document.getElementById("ilosc").value;
-	let wynik = document.getElementById("wynik");
-	let cena = 0;
-	if(paliwo == 1) cena = 4;
-	if(paliwo == 2) cena = 3.5;
-	wynik.innerHTML = "koszt paliwa: " + cena * ilosc + " zł";
+body {
+	margin: 0;
+	font-family: Helvetica;
+}
+#banerLewy,
+#lewy {
+	background: rgb(130, 69, 85);
+	color: white;
+	width: 30%;
+	height: 200px;
+	text-align: center;
+	float: left;
+}
+#banerPrawy,
+#prawy {
+	background: rgb(130, 69, 85);
+	color: white;
+	width: 70%;
+	height: 200px;
+	text-align: center;
+	float: left;
+}
+#glowny,
+#stopka {
+	background: rgb(240, 234, 226);
+	padding: 120px;
+}
+table,
+td {
+	border: 1px solid rgb(130, 69, 85);
+	color: rgb(130, 69, 85);
+	padding: 10px;
+}
+a {
+	color: rgb(240, 234, 226);
 }
 
 ============

@@ -1,48 +1,3 @@
-styl2.css
-
-body {
-	box-sizing: border-box;
-	margin: 0;
-	font-family: Helvetica;
-}
-#lista, #logo {
-	background: #6FACE3;
-	color: blue;
-	height: 300px;
-	width: 30%;
-	float: left;
-}
-#formularz {
-	background: #6FACE3;
-	color: blue;
-	height: 300px;
-	width: 40%;
-	float: left;
-}
-#glowny {
-	background: #4C93D2;
-	height: 350px;
-	padding: 20px;
-	text-align: center;
-	clear: both;
-}
-#stopka {
-	background: #2D77BA;
-	color: white;
-	height: 170px;
-	padding: 15px;
-}
-a {
-	background: LightSkyBlue;
-	margin: 5px;
-	padding: 10px;
-}
-a:visited {
-	background: LightSteelBlue;
-}
-
-============
-
 hurtownia.php
 
 <!DOCTYPE html>
@@ -110,6 +65,60 @@ hurtownia.php
 	</div>
 </body>
 </html>
+
+============
+
+kwerendy.txt
+
+1. SELECT podzespoly.nazwa, podzespoly.dostepnosc, podzespoly.cena FROM podzespoly, producenci WHERE podzespoly.producenci_id = producenci.id AND producenci.nazwa = 'ADATA';
+2. SELECT podzespoly.id, podzespoly.opis FROM podzespoly, producenci WHERE podzespoly.producenci_id = producenci.id AND dostepnosc = 0 AND producenci.nazwa IN ('Intel', 'AMD');
+3. SELECT podzespoly.opis, podzespoly.cena, producenci.nazwa FROM podzespoly, producenci WHERE podzespoly.producenci_id = producenci.id;
+4. ALTER TABLE producenci ADD COLUMN (priorytet INT);
+
+============
+
+styl2.css
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Helvetica;
+}
+#lista, #logo {
+	background: #6FACE3;
+	color: blue;
+	height: 300px;
+	width: 30%;
+	float: left;
+}
+#formularz {
+	background: #6FACE3;
+	color: blue;
+	height: 300px;
+	width: 40%;
+	float: left;
+}
+#glowny {
+	background: #4C93D2;
+	height: 350px;
+	padding: 20px;
+	text-align: center;
+	clear: both;
+}
+#stopka {
+	background: #2D77BA;
+	color: white;
+	height: 170px;
+	padding: 15px;
+}
+a {
+	background: LightSkyBlue;
+	margin: 5px;
+	padding: 10px;
+}
+a:visited {
+	background: LightSteelBlue;
+}
 
 ============
 

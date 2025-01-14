@@ -15,56 +15,12 @@ mysqli_close($con);
 
 ============
 
-styl4.css
+kwerendy.txt
 
-body {
-	box-sizing: border-box;
-	margin: 0;
-}
-#baner {
-	background: #301B5E;
-	color: white;
-	font-family: Arial;
-	height: 60px;
-	padding: 20px;
-}
-#lewy {
-	background: #0193DA;
-	width: 60%;
-	height: 700px;
-	float: left;
-}
-#prawy {
-	background: #2DAFEE;
-	width: 40%;
-	text-align: center;
-	height: 700px;
-	float: left;
-}
-#stopka {
-	background: #301B5E;
-	color: white;
-	text-align: center;
-}
-img {
-	padding: 20px;
-	border: 1px dotted orange;
-}
-a {
-	color: white;
-}
-a:hover {
-	color: red;
-}
-button {
-	background: orange;
-	color: white;
-	border: none;
-	padding: 20px;
-}
-ul {
-	list-style-position: inside;
-}
+1. INSERT INTO uzytkownik VALUES (NULL, 'Jolanta', 'Jasny', '600600600', 'jolanta@poczta.pl')
+2. SELECT tytul, tresc, podkategoria FROM ogloszenie WHERE uzytkownik_id = 1 AND kategoria = 1
+3. CREATE USER 'jolanta'@'localhost' IDENTIFIED BY 'jol1@'
+4. GRANT SELECT, UPDATE ON uzytkownik.* TO 'jolanta'@'localhost'
 
 ============
 
@@ -122,6 +78,59 @@ rejestracja.html
 	</div>
 </body>
 </html>
+
+============
+
+styl4.css
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+}
+#baner {
+	background: #301B5E;
+	color: white;
+	font-family: Arial;
+	height: 60px;
+	padding: 20px;
+}
+#lewy {
+	background: #0193DA;
+	width: 60%;
+	height: 700px;
+	float: left;
+}
+#prawy {
+	background: #2DAFEE;
+	width: 40%;
+	text-align: center;
+	height: 700px;
+	float: left;
+}
+#stopka {
+	background: #301B5E;
+	color: white;
+	text-align: center;
+}
+img {
+	padding: 20px;
+	border: 1px dotted orange;
+}
+a {
+	color: white;
+}
+a:hover {
+	color: red;
+}
+button {
+	background: orange;
+	color: white;
+	border: none;
+	padding: 20px;
+}
+ul {
+	list-style-position: inside;
+}
 
 ============
 

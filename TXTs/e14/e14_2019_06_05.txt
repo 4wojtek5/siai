@@ -1,49 +1,3 @@
-uslugi.html
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8" />
-	<title>Usługi informatyczne</title>
-	<link rel="stylesheet" href="styl.css" />
-	<link rel="icon" href="logo.png" />
-	<script src="main.js"></script>
-</head>
-<body>
-	<div id="kontener">
-		<div id="logo">
-			<img src="logo.png" alt="logo firmy" />
-		</div>
-		<div id="menu">
-			<a href="index.html">O nas</a>
-			<a href="uslugi.html">Usługi</a>
-			<a href="kontakt.html">Kontakt</a>
-		</div>
-		<div id="baner">
-			<img src="animacja.gif" />
-		</div>
-		<div id="glowny">
-			<hr/>
-			<h1>Oferowane usługi</h1>
-			<ul>
-				<li>Outsourcing IT</li>
-				<li>Instalacja i konfiguracja systemów operacyjnych</li>
-				<li>Sprzęt komputerowy</li>
-				<li>Sweris komputerów</li>
-				<li>Projektowanie i aktualizacja stron WWW</li>
-				<li>Hosting</li>
-			</ul>
-			<hr/>
-		</div>
-		<div id="stopka">
-			<p>Autor strony: <b>PESEL</p>
-		</div>
-	</div>
-</body>
-</html>
-
-============
-
 index.html
 
 <!DOCTYPE html>
@@ -81,23 +35,6 @@ index.html
 	</div>
 </body>
 </html>
-
-============
-
-main.js
-
-function formularz() {
-	let check = document.getElementById("check").checked;
-	if(check) {
-		let wynik = document.getElementById("wynik");
-		let imie = (document.getElementById("imie").value).toUpperCase();
-		let nazwisko = (document.getElementById("nazwisko").value).toUpperCase();
-		let usluga = document.getElementById("usluga").value;
-		wynik.innerHTML = imie + " " + nazwisko + "<br/>" + "Treść Twojej sprawy: " + usluga + "<br/>" + "Na podany e-mail zostanie wysłana oferta."; 
-	} else {
-		wynik.innerHTML = "<span style='color: red;'>Musisz zapoznać się z regulaminem</span>";
-	}
-}
 
 ============
 
@@ -168,6 +105,23 @@ kontakt.html
 
 ============
 
+main.js
+
+function formularz() {
+	let check = document.getElementById("check").checked;
+	if(check) {
+		let wynik = document.getElementById("wynik");
+		let imie = (document.getElementById("imie").value).toUpperCase();
+		let nazwisko = (document.getElementById("nazwisko").value).toUpperCase();
+		let usluga = document.getElementById("usluga").value;
+		wynik.innerHTML = imie + " " + nazwisko + "<br/>" + "Treść Twojej sprawy: " + usluga + "<br/>" + "Na podany e-mail zostanie wysłana oferta."; 
+	} else {
+		wynik.innerHTML = "<span style='color: red;'>Musisz zapoznać się z regulaminem</span>";
+	}
+}
+
+============
+
 styl.css
 
 body {
@@ -218,6 +172,52 @@ hr {
 table {
 	text-align: left;
 }
+
+============
+
+uslugi.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi informatyczne</title>
+	<link rel="stylesheet" href="styl.css" />
+	<link rel="icon" href="logo.png" />
+	<script src="main.js"></script>
+</head>
+<body>
+	<div id="kontener">
+		<div id="logo">
+			<img src="logo.png" alt="logo firmy" />
+		</div>
+		<div id="menu">
+			<a href="index.html">O nas</a>
+			<a href="uslugi.html">Usługi</a>
+			<a href="kontakt.html">Kontakt</a>
+		</div>
+		<div id="baner">
+			<img src="animacja.gif" />
+		</div>
+		<div id="glowny">
+			<hr/>
+			<h1>Oferowane usługi</h1>
+			<ul>
+				<li>Outsourcing IT</li>
+				<li>Instalacja i konfiguracja systemów operacyjnych</li>
+				<li>Sprzęt komputerowy</li>
+				<li>Sweris komputerów</li>
+				<li>Projektowanie i aktualizacja stron WWW</li>
+				<li>Hosting</li>
+			</ul>
+			<hr/>
+		</div>
+		<div id="stopka">
+			<p>Autor strony: <b>PESEL</p>
+		</div>
+	</div>
+</body>
+</html>
 
 ============
 

@@ -71,6 +71,57 @@ index.html
 
 ============
 
+kwerendy.txt
+
+1. SELECT cena FROM farby WHERE kolor = 'niebieski';
+2. SELECT kolor, cena/pojemnosc FROM farby;
+3. SELECT farby.kolor FROM farby, malowanie WHERE farby.id_farby = malowanie.id_farby AND malowanie.id_pomieszczenia = 3;
+
+============
+
+main.js
+
+function oblicz() {
+    const wynik = document.getElementById('wynik')
+    const powierzchnia = +document.getElementById('powierzchnia').value
+    wynik.innerHTML = "Liczba jednolitrowych puszek farby potrzebnych do pomalowania wynosi: " + Math.ceil(powierzchnia / 4)
+}
+
+============
+
+mieszamy.html
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>malarz</title>
+    <link rel="stylesheet" href="./styl.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="./index.html">Koszty farby</a></h1>
+    </header>
+    <main>
+        <section id="panelLewy">
+            <h3>Mieszamy czy wyceniamy?</h3>
+            <a href="./mieszamy.html">Mieszamy</a>
+			<br />
+            <a href="./cena.html">Wyceniamy</a>
+        </section>
+        <section id="panelPrawy">
+            <p>Strona w trakcie budowy</p>
+        </section>
+    </main>
+    <footer>MALARZ<br />Stronę opracował: Chriskyy#0181</footer>
+</body>
+
+</html>
+
+============
+
 styl.css
 
 body {
@@ -118,49 +169,6 @@ img {
 	margin: 30px;
 	padding: 10px;
 }
-
-============
-
-main.js
-
-function oblicz() {
-    const wynik = document.getElementById('wynik')
-    const powierzchnia = +document.getElementById('powierzchnia').value
-    wynik.innerHTML = "Liczba jednolitrowych puszek farby potrzebnych do pomalowania wynosi: " + Math.ceil(powierzchnia / 4)
-}
-
-============
-
-mieszamy.html
-
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <title>malarz</title>
-    <link rel="stylesheet" href="./styl.css">
-</head>
-
-<body>
-    <header>
-        <h1><a href="./index.html">Koszty farby</a></h1>
-    </header>
-    <main>
-        <section id="panelLewy">
-            <h3>Mieszamy czy wyceniamy?</h3>
-            <a href="./mieszamy.html">Mieszamy</a>
-			<br />
-            <a href="./cena.html">Wyceniamy</a>
-        </section>
-        <section id="panelPrawy">
-            <p>Strona w trakcie budowy</p>
-        </section>
-    </main>
-    <footer>MALARZ<br />Stronę opracował: Chriskyy#0181</footer>
-</body>
-
-</html>
 
 ============
 

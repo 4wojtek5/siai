@@ -1,54 +1,3 @@
-styl.css
-
-* {
-	font-family: Garamond;
-}
-body {
-	margin: 0;
-}
-header {
-	background: linear-gradient(#97B498, #C8E6C9);
-	color: white;
-	text-align: center;
-	padding: 5px;
-}
-main {
-	display: flex;
-}
-#left {
-	background-color: #C8E6C9;
-	color: #005005;
-	width: 40%;
-	height: 600px;
-}
-#right {
-	color: #005005;
-	width: 60%;
-	height: 600px;
-	overflow: scroll;
-}
-footer {
-	background: linear-gradient(#C8E6C9, #97B498);	
-	color: white;
-	padding: 12px;
-}
-video {
-	width: 100%;
-}
-form {
-	padding: 10px 50px;
-}
-button {
-	background-color: #97B498;
-	color: white;
-}
-button:hover {
-	background-color: #FFFFFF;
-	color: #97B498;
-}
-
-============
-
 index.php
 
 <!DOCTYPE html>
@@ -110,6 +59,66 @@ index.php
 	?>
 </body>
 </html>
+
+============
+
+kwerendy.txt
+
+1. INSERT INTO odpowiedzi VALUES (NULL, 1, 5, 'Przyda Ci się także wysoki stół, na którym postawisz pieska');
+2. SELECT nick, YEAR(NOW())-rejestracja AS latNaForum FROM konta WHERE nick IN('Jacek', 'Tomek', 'Monika');
+3. SELECT konta.nick, konta.postow, pytania.pytanie FROM konta, pytania WHERE konta.id = pytania.konta_id AND pytania.id = 1;
+4. SELECT odpowiedzi.odpowiedz, konta.nick FROM odpowiedzi, konta WHERE odpowiedzi.konta_id = konta.id AND odpowiedzi.Pytania_id = 1;
+
+============
+
+styl.css
+
+* {
+	font-family: Garamond;
+}
+body {
+	margin: 0;
+}
+header {
+	background: linear-gradient(#97B498, #C8E6C9);
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+main {
+	display: flex;
+}
+#left {
+	background-color: #C8E6C9;
+	color: #005005;
+	width: 40%;
+	height: 600px;
+}
+#right {
+	color: #005005;
+	width: 60%;
+	height: 600px;
+	overflow: scroll;
+}
+footer {
+	background: linear-gradient(#C8E6C9, #97B498);	
+	color: white;
+	padding: 12px;
+}
+video {
+	width: 100%;
+}
+form {
+	padding: 10px 50px;
+}
+button {
+	background-color: #97B498;
+	color: white;
+}
+button:hover {
+	background-color: #FFFFFF;
+	color: #97B498;
+}
 
 ============
 

@@ -69,6 +69,15 @@ biuro.php
 
 ============
 
+kwerendy.txt
+
+1. SELECT id, cel, cena FROM wycieczki WHERE dostepna = 0;
+2. SELECT nazwaPliku, podpis FROM zdjecia ORDER BY podpis DESC;
+3. SELECT zdjecia.podpis, wycieczki.cena, wycieczki.cel FROM zdjecia INNER JOIN wycieczki ON zdjecia.id = wycieczki.zdjecia_id WHERE wycieczki.cena < 1200;
+4. ALTER TABLE wycieczki DROP COLUMN dataWyjazdu;
+
+============
+
 styl4.css
 
 body {

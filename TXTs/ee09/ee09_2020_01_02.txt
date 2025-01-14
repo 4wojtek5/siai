@@ -1,15 +1,3 @@
-main.js
-
-function oblicz() {
-	let dystans = parseInt(document.getElementById("dystans").value);
-	let spalanie = parseInt(document.getElementById("spalanie").value);
-	let wynik = document.getElementById("wynik");
-	let paliwo = spalanie / 100 * dystans;
-	wynik.innerHTML = "Potrzebujesz: " + Math.round(paliwo) + " litrów paliwa";
-}
-
-============
-
 index.html
 
 <!DOCTYPE html>
@@ -100,6 +88,27 @@ kalkulacja.html
 	</div>
 </body>
 </html>
+
+============
+
+kwerendy.txt
+
+1. SELECT model, kolor, stan FROM samochody WHERE rocznik > 2010;
+2. UPDATE samochody SET kolor = 'ciemny niebieski' WHERE model = 'Yaris';
+3. CREATE USER 'joanna'@'localhost' IDENTIFIED BY 'joan87$';
+4. GRANT CREATE, ALTER ON samochody.* TO 'joanna'@'localhost';
+
+============
+
+main.js
+
+function oblicz() {
+	let dystans = parseInt(document.getElementById("dystans").value);
+	let spalanie = parseInt(document.getElementById("spalanie").value);
+	let wynik = document.getElementById("wynik");
+	let paliwo = spalanie / 100 * dystans;
+	wynik.innerHTML = "Potrzebujesz: " + Math.round(paliwo) + " litrów paliwa";
+}
 
 ============
 

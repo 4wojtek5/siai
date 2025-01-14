@@ -1,52 +1,18 @@
-styl1.css
+dodaj.php
 
-body {
-	margin: 0;
-	font-family: Helvetica;
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'dane');
+if(!empty($_POST['tytul']) && !empty($_POST['gatunek']) && !empty($_POST['rok']) && !empty($_POST['ocena'])) {
+	$tytul = $_POST['tytul'];
+	$gatunek = $_POST['gatunek'];
+	$rok = $_POST['rok'];
+	$ocena = $_POST['ocena'];
+	$sql = "INSERT INTO filmy(gatunki_id, tytul, rok, ocena) VALUES ($gatunek, '$tytul', $rok, $ocena);";
+	mysqli_query($con, $sql);
+	echo "Film $tytul został dodany do bazy";
 }
-#lewy {
-	background: Navy;
-	color: white;
-	height: 700px;
-	width: 25%;
-	float: left;
-}
-#prawo1 {
-	background: RoyalBlue;
-	height: 100px;
-	width: 75%;
-	text-align: center;
-	float: left;
-}
-#prawo2 {
-	background: SteelBlue;
-	height: 300px;
-	width: 75%;
-	float: left;
-}
-#prawo3 {
-	background: RoyalBlue;
-	height: 300px;
-	width: 75%;
-	text-align: center;
-	float: left;
-}
-#stopka {
-	background: SteelBlue;
-	text-align: center;
-	padding: 20px;
-	clear: both;
-}
-h1 {
-	letter-spacing: 5px;
-}
-form {
-	margin: 30px;
-	line-height: 3;
-}
-form:hover {
-	background: DeepSkyBlue;
-}
+mysqli_close($con);
+?>
 
 ============
 
@@ -100,21 +66,64 @@ index.html
 
 ============
 
-dodaj.php
+kwerendy.txt
 
-<?php
-$con = mysqli_connect('localhost', 'root', '', 'dane');
-if(!empty($_POST['tytul']) && !empty($_POST['gatunek']) && !empty($_POST['rok']) && !empty($_POST['ocena'])) {
-	$tytul = $_POST['tytul'];
-	$gatunek = $_POST['gatunek'];
-	$rok = $_POST['rok'];
-	$ocena = $_POST['ocena'];
-	$sql = "INSERT INTO filmy(gatunki_id, tytul, rok, ocena) VALUES ($gatunek, '$tytul', $rok, $ocena);";
-	mysqli_query($con, $sql);
-	echo "Film $tytul został dodany do bazy";
+1. INSERT INTO filmy(id, tytul, rok, ocena) VALUES (NULL,'Suburbicon',2017,5);
+2. SELECT filmy.tytul, gatunki.nazwa FROM filmy, gatunki WHERE filmy.gatunki_id=gatunki.id AND ocena=6;
+3. SELECT tytul, rok FROM filmy, gatunki WHERE filmy.gatunki_id=gatunki.id AND gatunki.nazwa = 'dramat' AND ocena = 5;
+4. CREATE TABLE aktorzy(id INT NOT NULL, imie TEXT, nazwisko TEXT, PRIMARY KEY(id));
+
+============
+
+styl1.css
+
+body {
+	margin: 0;
+	font-family: Helvetica;
 }
-mysqli_close($con);
-?>
+#lewy {
+	background: Navy;
+	color: white;
+	height: 700px;
+	width: 25%;
+	float: left;
+}
+#prawo1 {
+	background: RoyalBlue;
+	height: 100px;
+	width: 75%;
+	text-align: center;
+	float: left;
+}
+#prawo2 {
+	background: SteelBlue;
+	height: 300px;
+	width: 75%;
+	float: left;
+}
+#prawo3 {
+	background: RoyalBlue;
+	height: 300px;
+	width: 75%;
+	text-align: center;
+	float: left;
+}
+#stopka {
+	background: SteelBlue;
+	text-align: center;
+	padding: 20px;
+	clear: both;
+}
+h1 {
+	letter-spacing: 5px;
+}
+form {
+	margin: 30px;
+	line-height: 3;
+}
+form:hover {
+	background: DeepSkyBlue;
+}
 
 ============
 

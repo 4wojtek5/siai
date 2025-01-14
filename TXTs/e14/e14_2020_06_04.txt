@@ -34,6 +34,69 @@ galeria.html
 
 ============
 
+kwerendy.txt
+
+1. CREATE TABLE zamowienia (id INT UNSIGNED NOT NULL, imie TEXT NULL, nazwisko TEXT NULL, adres_email TEXT NULL, liczba_choinek INT NULL, liczba_mikolajow INT NULL, liczba_reniferow INT NULL, info BOOLEAN NULL);
+2. ALTER TABLE zamowienia ADD PRIMARY KEY(id);
+3. CREATE USER 'klient' IDENTIFIED BY 'klient123';
+4. GRANT INSERT ON sklep.* TO klient
+5. INSERT INTO zamowienia VALUES (NULL, 'Jan', 'Kowalski', 'jKowalski@poczta.pl', NULL, NULL, NULL, NULL)
+
+============
+
+main.js
+
+function f(wybor) {
+	let wynik = document.getElementById("wynik");
+	console.log(wybor)
+	if(wybor == "c") wynik.innerHTML = "Wybrałeś choinkę. Cena 10 zł";
+	if(wybor == "m") wynik.innerHTML = "Wybrałeś mikołaja. Cena 12 zł";
+	if(wybor == "r") wynik.innerHTML = "Wybrałeś renifera. Cena 8 zł";
+}
+
+============
+
+styl.css
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Garamond;
+	color: white;
+	text-align: center;
+}
+#baner,
+#stopka {
+	background: ForestGreen;
+	padding: 10px;
+	clear: both;
+}
+#lewy,
+#prawy {
+	background: ForestGreen;
+	height: 490px;
+	width: 25%;
+	font-size: 30px;
+	float: left;
+}
+#srodkowy {
+	background: Chocolate;
+	height: 490px;
+	width: 50%;
+	font-size: 25px;
+	float: left;
+}
+#srodkowy img {
+	width: 150px;
+	height: 150px;
+	border-radius: 100%
+}
+input, button {
+	color: green;
+}
+
+============
+
 zamowienie.php
 
 <!DOCTYPE html>
@@ -89,59 +152,6 @@ zamowienie.php
 	</div>
 </body>
 </html>
-
-============
-
-styl.css
-
-body {
-	box-sizing: border-box;
-	margin: 0;
-	font-family: Garamond;
-	color: white;
-	text-align: center;
-}
-#baner,
-#stopka {
-	background: ForestGreen;
-	padding: 10px;
-	clear: both;
-}
-#lewy,
-#prawy {
-	background: ForestGreen;
-	height: 490px;
-	width: 25%;
-	font-size: 30px;
-	float: left;
-}
-#srodkowy {
-	background: Chocolate;
-	height: 490px;
-	width: 50%;
-	font-size: 25px;
-	float: left;
-}
-#srodkowy img {
-	width: 150px;
-	height: 150px;
-	border-radius: 100%
-}
-input, button {
-	color: green;
-}
-
-============
-
-main.js
-
-function f(wybor) {
-	let wynik = document.getElementById("wynik");
-	console.log(wybor)
-	if(wybor == "c") wynik.innerHTML = "Wybrałeś choinkę. Cena 10 zł";
-	if(wybor == "m") wynik.innerHTML = "Wybrałeś mikołaja. Cena 12 zł";
-	if(wybor == "r") wynik.innerHTML = "Wybrałeś renifera. Cena 8 zł";
-}
 
 ============
 
