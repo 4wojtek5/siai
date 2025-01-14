@@ -1,0 +1,301 @@
+Formuła 2012 - E.14
+
+
+2018
+Styczeń
+01 (PHP) - Portal ogłoszeniowy E.14-01-18.01
+
+02 (PHP) - Portal ogłoszeniowy E.14-02-18.01
+
+03 (PHP) - Portal ogłoszeniowy E.14-03-18.01
+
+04 (PHP) - Portal ogłoszeniowy E.14-04-18.01
+
+
+Czerwiec
+01 (PHP) - Restauracja Wszystkie Smaki E.14-01-18.06
+
+04 (PHP) - Restauracja Kulinaria E.14-04-18.06
+
+05 (JS) - Dom weselny E.14-03-18.06
+
+06 (JS) - Pizzeria E.14-02-18.06
+
+
+
+
+2019
+Styczeń
+01 (PHP) - Filmoteka E.14-01-19.01
+
+02 (JS) - Formatowanie dokumentu HTML E.14-02-19.01
+
+03 (PHP) - Filmoteka E.14-03-19.01
+
+04 (JS) - Hurtownia kawy E.14-04-19.01
+
+05 (PHP) - Baza grzybów E.14-05-19.01
+
+06 (PHP) - Biuro podróży E.14-06-19.01
+
+07 (PHP) - Hurtownia komputerowa E.14-07-19.01
+
+08 (PHP) - Hurtownia komputerowa E.14-08-19.01
+
+09 (PHP) - Atlas zwierząt E.14-09-19.01
+
+10 (PHP) - Drapieżniki E.14-10-19.01
+
+11 (JS) - Galeria zdjęć E.14-11-19.01
+
+12 (JS) - Galeria zdjęć E.14-12-19.01
+
+
+Czerwiec
+01 (PHP) - Sklep papierniczy E.14-01-19.06
+
+02 (PHP) - Hurtownia papiernicza E.14-02-19.06
+
+03 (PHP) - Biblioteka E.14-03-19.06
+
+04 (PHP) - Biblioteka E.14-04-19.06
+
+05 (JS) - Usługi informatyczne E.14-05-19.06
+
+06 (JS) - Pogotowie komputerowe E.14-06-19.06
+
+
+
+
+2020
+Styczeń
+01 (PHP) - Sklep komputerowy E.14-01-20.01-SG
+
+02 (JS) - Fabryka żelków E.14-02-20.01-SG
+
+03 (JS) - Fabryka cukierków E.14-03-20.01-SG
+
+04 (PHP) - Gromady kręgowców E.14-04-20.01-SG
+
+
+Czerwiec
+01 (JS) - Malarz E.14-01-20.06-SG
+
+02 (PHP) - Wynajem pokoi E.14-02-20.06-SG
+
+03 (PHP) - Kwiaty E.14-03-20.06-SG
+
+04 (JS+PHP) - Ozdoby - sklep E.14-04-20.06-SG
+
+
+
+
+
+
+
+Formuła 2017 - EE.09
+
+2019
+Czerwiec
+01 (PHP) - Portal dla wędkarzy EE.09-01-19.06
+
+02 (JS) - Stacja paliw EE.09-02-19.06
+
+03 (PHP) - Zawody wędkarskie EE.09-03-19.06
+
+04 (JS) - Pomocnik matematyczny EE.09-04-19.06
+
+05 (JS) - Ciągi liczbowe EE.09-05-19.06
+
+06 (PHP) - Pogotowie Ratunkowe EE.09-05-19.06
+
+
+
+
+2020
+Styczeń
+01 (PHP) - Klub wędkowania EE.09-01-20.01-SG
+
+02 (JS) - Stacja paliw EE.09-02-20.01-SG
+
+03 (PHP) - Prognoza pogody Poznań EE.09-03-20.01-SG
+
+
+Czerwiec
+01 (PHP) - Organizer EE.09-01-20.06-SG
+
+02 (PHP) - Biuro podróży EE.09-02-20.06-SG
+
+03 (PHP) - Kalendarz EE.09-03-20.06-SG
+
+04 (JS) - Salon kosmetyczny EE.09-04-20.06-SG
+
+05 (JS) - Salon fryzjerski EE.09-05-20.06-SG
+
+06 (PHP) - Biuro podróży EE.09-06-20.06-SG
+
+
+
+
+2021
+Styczeń
+01 (PHP) - Piłka nożna EE.09-01-21.01-SG
+
+02 (PHP) - Piłka nożna EE.09-02-21.01-SG
+
+03 (PHP) - BMI EE.09-03-21.01-SG
+
+04 (PHP) - BMI EE.09-04-21.01-SG
+
+05 (PHP) - Lotnisko EE.09-05-21.01-SG
+
+06 (PHP) - Lotnisko EE.09-06-21.01-SG
+
+
+Czerwiec
+01 (PHP) - Portal społecznościowy EE.09-01-21.06-SG
+
+02 (PHP) - Warzywniak EE.09-02-21.06-SG
+
+03 (PHP) - Wypożyczalnia filmów EE.09-03-21.06-SG
+
+04 (PHP) - Panel administratora EE.09-04-21.06-SG
+
+
+
+
+2022
+Styczeń
+01 (PHP) - Karty wędkarskie EE.09-01-22.01-SG
+
+02 (PHP) - Prognoza pogody Wrocław EE.09-02-22.01-SG
+
+03 (PHP) - Zespoły ratownicze EE.09-03-22.01-SG
+
+04 (PHP) - Forum wielbicieli psów EE.09-04-22.01-SG
+
+05 (PHP) - Portal społecznościowy EE.09-05-22.01-SG
+
+06 (JS) - Konfigurator stylu CSS EE.09-06-22.01-SG
+
+07 (JS) - Galeria zdjęc EE.09-07-22.01-SG
+
+
+Czerwiec
+01 (PHP) - Forum o psach EE.09-01-22.06-SG
+
+02 (JS) - Pomocnik CSS EE.09-02-22.06-SG
+
+03 (PHP) - Opinie klientów EE.09-03-22.06-SG
+
+04 (JS) - Sieci komputerowe EE.09-04-22.06-SG
+
+
+
+
+2023
+Styczeń
+01 (PHP) - Sekretariat EE.09-01-23.01-SG
+
+02 (JS) - Galeria EE.09-02-23.01-SG
+
+03 (JS) - Gazeta EE.09-03-23.01-SG
+
+04 (PHP) - Wizytówki EE.09-04-23.01-SG
+
+
+
+
+
+
+Formuła 2019 - INF.03
+
+2021
+Czerwiec
+01 (PHP) - Restauracja Wszystkie Smaki INF.03-01-21.06-SG
+
+
+
+
+2022
+Styczeń
+01 (PHP) - Restauracja Wszystkie Smaki INF.03-01-22.01-SG
+
+
+Czerwiec - podobne do sesji ee09_2019_06
+01 (PHP) - Portal dla wędkarzy INF.03-01-22.06-SG
+
+02 (JS) - Stacja paliw INF.03-02-22.06-SG
+
+03 (PHP) - Zawody wędkarskie INF.03-02-22.06-SG
+
+
+
+
+2023
+Styczeń - podobne do sesji e14_2020_06 oraz ee09_2020_06
+(5 arkuszy, kolejność - 123-123-451-234)
+01 (JS) - Malarz INF.03-01-23.01-SG
+
+02 (PHP) - Wynajem pokoi INF.03-02-23.01-SG
+
+03 (PHP) - Kwiaty INF.03-03-23.01-SG
+
+04 (PHP) - Wycieczki po Europie INF.03-04-23.01-SG
+
+05 (PHP) - Sierpniowy kalendarz INF.03-05-23.01-SG
+
+
+Czerwiec - podobne do sesji e14_2019_06
+(12 arkuszy - 4 różne, kolejność - 121-323-414-342)
+01 (PHP) - Sklep dla uczniów INF.03-01-23.06
+
+02 (PHP) - Hurtownia szkolna INF.03-02-23.06
+
+04 (PHP) - Biblioteka publiczna INF.03-04-23.06
+
+07 (PHP) - Biblioteka INF.03-07-23.06
+
+
+
+
+2024
+Styczeń - podobne do sesji e14_2019_06 oraz ee09_2020_06
+(12 arkuszy - 6 różnych, kolejność - 121-345-462-536)
+01 (JS) - Firma IT INF.03-01-24.01-SG
+
+02 (JS) - Komputery INF.03-02-24.01-SG
+
+04 (PHP) - Terminarz INF.03-04-24.01-SG
+
+05 (JS) - Salon kosmetyczny INF.03-05-24.01-SG
+
+06 (PHP) - Poznaj Europę INF.03-06-24.01-SG
+
+08 (JS) - Salon fryzjerski INF.03-08-24.01-SG
+
+
+Czerwiec
+01 (PHP) - Motocykle INF.03-01-24.06-SG
+
+02 (JS) - Chat INF.03-02-24.06-SG
+
+03 (PHP) - Poziomy rzek INF.03-03-24.06-SG
+
+04 (PHP) - Galeria INF.03-04-24.06-SG
+
+05 (PHP) - Komis aut INF.03-05-24.06-SG
+
+06 (JS) - Rejestracja INF.03-06-24.06-SG
+
+07 (PHP) - Ważenie pojazdów INF.03-07-24.06-SG
+
+08 (JS) - Sklep - rejestracja INF.03-08-24.06-SG
+
+09 (JS) - Biuro turystyczne INF.03-09-24.06-SG
+
+10 (JS) - Nasz zespół INF.03-10-24.06-SG
+
+11 (PHP) - Hodowla świnek morskich INF.03-11-24.06-SG
+
+12 (JS) - Efekty obrazu INF.03-12-24.06-SG

@@ -1,0 +1,91 @@
+Kwerendy (zapytania SELECT) uniwersalne:
+
+zapis wygląda kolejno w taki sposób:
+
+SELECT – nazwa kolumny (PIONOWO)
+
+FROM – nazwa tabeli
+
+WHERE – nazwa kolumny (POZIOMO)
+
+GROUP BY – grupowanie danych
+
+HAVING – filtr na poziomie grupy (po GROUP BY)
+
+ORDER BY – sortowanie danych
+
+w silniku bazodanowym jednak najpierw dochodzi do łączenia tabel (FROM), potem selekcji WHERE, grupowanie (GROUP BY), filtrowanie grup (HAVING), SELECT i na końcu sortowanie (ORDER BY);
+
+*(zapisane w ten sposób ,5′ dane oznaczają dane w pojedynczych apostrofach górnych. Niestety zastosowana czcionka ma pewne ograniczenia.)
+
+SELECT … FROM … – (zaznacz … z …) SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI); * (gwiazdka) oznacza ‚wszystkie kolumny’;
+
+SELECT DISTINCT … FROM … – (zaznacz unikaty … z …) SELECT DISTINCT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI);
+
+SELECT  … FROM … LIMIT … – (zaznacz … z … limit wierszy) SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) LIMIT 3;
+
+SELECT … AS … FROM … – (zaznacz … jako … z …) SELECT (NAZWA_KOLUMNY) AS (NASZA_NAZWA) FROM (NAZWA_TABELI);
+
+SELECT … FROM … WHERE … – (zaznacz … z … gdzie …) SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) WHERE (NAZWA_KOLUMNY) = ‚(WARTOŚĆ)’; tutaj po where można stosować = (równa się), <> (nie równa się), > (większe), >= (większe lub równe), < (mniejsze), <= (mniejsze lub równe);
+
+SELECT … FROM … WHERE … AND/OR … – (zaznacz … z … gdzie… i/albo …) SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) GDZIE (NAZWA_KOLUMNY) = ‚(WARTOŚĆ)’ AND/OR (NAZWA_KOLUMNY) = ‚(INNA_WARTOŚĆ)’;
+
+SELECT … FROM … WHERE … BETWEEN …  – (zaznacz … z … gdzie … jest pomiędzy …) SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) GDZIE (NAZWA_KOLUMNY) BETWEEN (WARTOŚĆ) AND (WARTOŚĆ);
+
+SELECT … FROM … WHERE … LIKE … – (zaznacz … z … gdzie … zawiera …) SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) GDZIE (NAZWA_KOLUMNY) LIKE (WARTOŚĆ); ‚%’ (procent) oznacza ciąg nieokreślonej ilości liter (np. ‚J%’), a ‚_’ (podkreślnik) zastępuje jedną literę ‚J_ _ _’;
+
+SELECT … FROM … WHERE … IN(…) – (zaznacz … z … gdzie … zawiera konkretne wartości(‚…’, ‚…’)) SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) GDZIE (NAZWA_KOLUMNY) IN(‚…’, ‚…’); działa jako alternatywa OR;
+
+SELECT … FROM … WHERE … ORDER BY … ASC/DESC – (zaznacz … z … gdzie …, oraz posortuj … wzrastająco/ malejąco); SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) WHERE (NAZWA_KOLUMNY + WARUNEK) ORDER BY (NAZWA_KOLUMNY) ASC/DESC; w przypadku nie wpisania ASC/DESC domyślnie dane posortują się wzrastająco; można sortować wielopoziomowo: SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) GDZIE (NAZWA_KOLUMNY i WARUNEK) ORDER BY (NAZWA_KOLUMNY) ASC, (NAZWA_INNEJ_KOLUMNY) ASC; można też nie wpisywać  nazwy kolumny po ORDER BY, tylko wpisać np. 1, przez co posortujemy dane według pierwsze kolumny wpisanej po SELECT;
+
+SELECT … FROM … WHERE … GROUP BY … – (zaznacz … z … gdzie …, oraz pogrupuj …); SELECT (NAZWA_KOLUMNY) FROM (NAZWA_TABELI) WHERE (NAZWA_KOLUMNY i warunek) GROUP BY (NAZWA_KOLUMNY); ta kwerenda nie zlicza nam liczby wierszy w grupie;
+
+SELECT … COUNT … AS ‚…’ FROM … GROUP BY … – (zaznacz … zlicz … i wyświetla jako ‚…” … z …, oraz pogrupuj …); SELECT (NAZWA_KOLUMNY) COUNT (NAZWA_KOLUMNY) AS (‚MOJA_NAZWA_KOLUMNY’) FROM (NAZWA_TABELI) GROUP BY (NAZWA_KOLUMNY); COUNT – zlicza wiersze, SUM – sumuje wiersze, MAX – znajduje najwyższą wartość, MIN – znajduje najniższą wartość, AVG – liczy średnią;
+
+SELECT … COUNT … AS ‚…’ FROM … GROUP BY … HAVING COUNT … – (zaznacz … zlicz … i wyświetla jako ‚…” … z … , oraz pogrupuj … i filtruj oraz zlicz po kryterium …); SELECT (NAZWA_KOLUMNY) COUNT (NAZWA_KOLUMNY) AS (‚MOJA_NAZWA_KOLUMNY’) FROM (NAZWA_TABELI) GROUP BY (NAZWA_KOLUMNY) HAVING COUNT (NAZWA_KOLUMNY operator ‚WARTOŚĆ’); HAVING jest nierozerwalna z GROUP BY;
+
+ 
+
+Połączenia (sprzężenia, join) między tabelami
+
+INNER JOIN – złączenie wewnętrzne – najpierw po SELECT wypisujemy interesujące nas kolumny ze wszystkich interesujących nas tabel, ważne aby przed nimi dopisać jednoliterowy alias z kropką, który będzie oznaczał nam w dalszym zapisie tabele, następnie wpisujemy FROM oraz nazwę tabeli AS jej alias INNER JOIN nazwa tabeli AS jej alias ON alias tabeli 1 kropka (.) nazwę kolumny = alias tabeli 2 kropka (.) nazwa kolumny z drugiej tabeli, gdzie wartości są sobie równe: SELECT alias1.nazwa_tabeli, alias2.nazwa_tabeli_2, alias3.nazwa_tabeli_3 FROM alias1 INNER JOIN alias2 ON (alias1.nazwa_tabeli)_(nazwa_kolumny) = (alias3.nazwa_tabeli)_(nazwa_kolumny); łączy tylko pokrywające się rekordy, NULL-e nie są wyświetlane;
+
+OUTER JOIN – sprzężenie zewnętrzne LEFT i RIGHT w zależności od nazwy pozostawiają kolumny z tabeli znajdującej się po lewej lub po prawej stronie, dopisując rekordy z drugiej tabeli, pozostawiając puste, w przypadku, jeśli druga tabela nie posiadałaby połączenia; FULL – sprzężenie, gdzie zachowane są wszystkie rekordy z prawej i lewej oraz NULL-ami z niewypełnionych rekordów; komendę zapisujemy zaraz po FROM i określeniu jego tabeli: SELECT alias1.nazwa_tabeli, alias2.nazwa_tabeli_2, alias3.nazwa_tabeli_3 FROM alias1 LEFT/RIGHT OUTER JOIN alias2 ON (alias1.nazwa_tabeli)_(nazwa_kolumny) = (alias3.nazwa_tabeli)_(nazwa_kolumny); dla FULL trzebanapisać kwerendy LEFT oraz RIGHT, które trzeba połączyć klauzulą UNION (żeby wyświetlić niepowtarzające się rekordy) lub UNION ALL (aby wyświetlić wszystkie rekordy): SELECT alias1.nazwa_tabeli, alias2.nazwa_tabeli_2, alias3.nazwa_tabeli_3 FROM alias1 LEFT OUTER JOIN alias2 ON (alias1.nazwa_tabeli)_(nazwa_kolumny) = (alias3.nazwa_tabeli)_(nazwa_kolumny) UNION SELECT alias1.nazwa_tabeli, alias2.nazwa_tabeli_2, alias3.nazwa_tabeli_3 FROM alias1 RIGHT OUTER JOIN alias2 ON (alias1.nazwa_tabeli)_(nazwa_kolumny) = (alias3.nazwa_tabeli)_(nazwa_kolumny);
+
+CROSS JOIN – tutaj łączy się „wszystko ze wszystkim”, rzadko używane; 100 kolumn * 100 kolumn = 10 000 rekordów; dobre do testowania wydajności; nie ma możliwości tworzenia warunków po klauzuli ON; SELECT a.alias_kolumny, a2.alias_kolumny2 FROM nazwa_tabeli1, nazwa_tabeli2;
+
+SELF JOIN – połączenie tabeli z samą sobą;
+
+——-
+
+INSERT – pozwala dodawać nowe dane do tabeli: INSERT INTO nazwa_tabeli (nazwa_kolumny1, nazwa_kolumny2) VALUES (wartość_kolumny1, wartość_kolumny2); na przykład: INSERT INTO uczniowie (imie, nazwisko) VALUES (‚Adam’, ‚Nowak’), (‚Jerzy’, „Kowalski’);
+
+——-
+
+UPDATE – aktualizowanie rekordów: UPDATE nazwa_tabeli SET nazwa_kolumny = wartość WHERE wartość = xxxx; czyli jesli chcemy zaktualizować jeden wiersz wpisujemy np.: UPDATE uczniowie SET wiek=11 WHERE imie = Adam; lub jeśli chcemy zaktualizować wszystkie wiersze: UPDATE uczniowie SET klasa=3
+
+——-
+
+DELETE FROM – usuwanie bezpowrotne wierszy z tabeli: DELETE FROM nazwa_tabeli WHERE warunek; i tak na przykład: DELETE FROM uczniowie WHERE czy_zdali = ‚N%’; co oznacza, że usuwamy rekordy z tabeli uczniowie, gdzie w kolumnie czy_zdali wartość zaczyna się od ‚N’ (Nie_zdali);
+
+—————
+
+Tworzenie i modyfikowanie tabel (DDL):
+
+CREATE – stwórz tabelę (NIE KOLUMNĘ!); na początku określamy, czy pozwalamy na puste wartości NULL, czy też nie NOT NULL. Domyślnie – zezwalamy na NULL-e. Określamy też PRIMARY KEY zamiast NULL lub NOT NULL. Primary key domyślnie deklaruje NOT NULL, co mówi nam, że klucz podstawowy (id) nie może być pusty. CONSTRAIN – ograniczenie aby nie pozwolić na duplikaty:
+
+CREATE TABLE nazwa_tabeli (nazwa_kolumny1 INTIGER NOT NULL, nazwa_kolumny2 INTIGER NOT NULL, nazwa_kolumny3 VARCHAR(55) NOT NULL, CONSTRAIN nazwa_kolumny4 PRIMARY KEY (nazwa_kolumny1));
+
+np.:
+
+CREATE TABLE nauczyciele (id_nauczyciele INTIGER NOT NULL, imie_i_nazwisko INTIGER NOT NULL, nr_telefonu VARCHAR(55) NOT NULL, CONSTRAIN nr_telefonu PRIMARY KEY (id_nauczyciele));
+
+—
+
+DROP TABLE – usuwanie tabeli i jej wszystkich danych, proces nieodwracalny; nie może być w tabeli FOREIGN KEY, bo to oznacza, że nasza tabela odwołuje się do innej (istnieje relacja między tabelami: DROP TABLE nazwa_tabeli;
+
+—
+
+ALTER – zmiany struktury: ALTER TABLE nazwa_tabeli ADD CONSTRAIN nazwa_kolumny FOREIGN KEY (nazwa kolumny) REFERENCES nazwa_tabeli (nazwa_kolumny);
+
+ALTER TABLE nauczyciele ADD CONSTRAIN nr_telefonu FOREIGN KEY (nr_telefonu_id) REFERENCES osoby_zatrudnione (id_osoby_zatrudnione);
